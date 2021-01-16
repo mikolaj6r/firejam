@@ -1,50 +1,50 @@
 import * as Koa from 'koa'
-import userServices from '../services/user';
+import clientServices from '../services/clients';
 
 export default {
   async find(ctx: Koa.Context) {
-    const users = await userServices.find();
+    const clients = await clientServices.find();
 
     return ctx.body = {
       status: 'success',
-      json: users
+      json: clients
     };
   },
   async findOne(ctx: Koa.Context) {
     const id = ctx.params.id;
 
-    const user = await userServices.findOne(id);
+    const client = await clientServices.findOne(id);
     
     return ctx.body = {
       status: 'success',
-      json: user
+      json: client
     };
   },
   async update(ctx: any) {
     const id = ctx.params.id;
-    const userData = ctx.request.body;
+    const clientData = ctx.request.body;
 
-    const user = await userServices.update(id, userData);
+    const client = await clientServices.update(id, clientData);
     
     return ctx.body = {
       status: 'success',
-      json: user
+      json: client
     };
   },
   async create(ctx: any) {
-    const userData = ctx.request.body;
+    const clientData = ctx.request.body;
 
-    const user = await userServices.create(userData);
+    const client = await clientServices.create(clientData);
     
     return ctx.body = {
       status: 'success',
-      json: user
+      json: client
     };
   },
   async delete(ctx: Koa.Context) {
     const id = ctx.params.id;
 
-    const status = await userServices.delete(id);
+    const status = await clientServices.delete(id);
     
     return ctx.body = {
       status: 'success',

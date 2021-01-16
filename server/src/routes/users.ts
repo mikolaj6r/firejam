@@ -8,14 +8,14 @@ const router = new Router({
 
 router
   .get('/', isAuthenticated,
-    isAuthorized({ hasRole: ['admin'] }), UserController.getAllUsers)
+    isAuthorized({ hasRole: ['admin'] }), UserController.find)
   .post('/', isAuthenticated,
-    isAuthorized({ hasRole: ['admin'] }), UserController.createUser)
+    isAuthorized({ hasRole: ['admin'] }), UserController.create)
   .get('/:id', isAuthenticated,
-    isAuthorized({ hasRole: ['admin'], allowSameUser: true }), UserController.getUser)
+    isAuthorized({ hasRole: ['admin'], allowSameUser: true }), UserController.findOne)
   .patch('/:id', isAuthenticated,
-    isAuthorized({ hasRole: ['admin'], allowSameUser: true }), UserController.updateUser)
+    isAuthorized({ hasRole: ['admin'], allowSameUser: true }), UserController.update)
   .delete('/:id', isAuthenticated,
-    isAuthorized({ hasRole: ['admin'] }), UserController.deleteUser)
+    isAuthorized({ hasRole: ['admin'] }), UserController.delete)
 
 export default router;
