@@ -34,29 +34,6 @@ app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
     }
 });
 
-async function firebaseAuthMiddleware(ctx: Koa.Context, next: () => Promise<any>) {
-    const authorization = ctx.req.headers['authorization'];
-    if (authorization) {
-        try {
-            let token = authorization.split(' ');
-            let decodedToken = await admin.auth().verifyIdToken(token[1]);
-            ctx.state.user = decodedToken;
-            await next();
-        } catch (err) {
-            console.log(err);
-            ctx.status = 401;
-        }
-    } else {
-        ctx.state.user = undefined;
-        await next();
-
-        //console.log('Authorization header is not found');
-        //ctx.status = 401;
-    }
-}
-
-app.use(firebaseAuthMiddleware);
-
 //routing
 const router = new Router();
 router.get('/', async (ctx) => {
