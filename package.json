@@ -2,8 +2,12 @@
   "name": "firejam",
   "version": "1.0.0",
   "description": "",
+  "private": true,
+  "workspaces": ["admin-spa", "server"],
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "dev": "yarn workspaces run dev"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

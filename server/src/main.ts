@@ -3,7 +3,7 @@ import * as HttpStatus from 'http-status-codes';
 
 import Router from 'koa-router';
 import cors  from '@koa/cors';
-
+import bodyParser from 'koa-bodyparser'
 
 import authRouter from './routes/auth'
 import userRouter from './routes/users'
@@ -18,6 +18,7 @@ const PORT = Number(process.env.PORT) || 3001;
 
 const app = new Koa();
 app.use(cors());
+app.use(bodyParser());
 
 // Middleware
 // Error handling

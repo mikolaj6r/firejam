@@ -526,3 +526,995 @@
 [info] >    email_verified: true, {"user":"  email_verified: true,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   email_verified: true,"}}
 [info] >    firebase: { identities: { email: [Array] }, sign_in_provider: 'password' }, {"user":"  firebase: { identities: { email: [Array] }, sign_in_provider: 'password' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   firebase: { identities: { email: [Array] }, sign_in_provider: 'password' },"}}
 [info] >    uid: 'hgdSFr2GIhYkyKeHzO0uiBSFLKg2' } {"user":"  uid: 'hgdSFr2GIhYkyKeHzO0uiBSFLKg2' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   uid: 'hgdSFr2GIhYkyKeHzO0uiBSFLKg2' }"}}
+[debug] [2021-01-15T23:51:06.285Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:51:06.295Z] Command:       /home/mikolaj/.nvm/versions/node/v14.9.0/bin/node /home/mikolaj/.nvm/versions/node/v14.9.0/bin/firebase functions:shell
+[debug] [2021-01-15T23:51:06.295Z] CLI Version:   9.2.0
+[debug] [2021-01-15T23:51:06.295Z] Platform:      linux
+[debug] [2021-01-15T23:51:06.296Z] Node Version:  v14.9.0
+[debug] [2021-01-15T23:51:06.310Z] Time:          Sat Jan 16 2021 00:51:06 GMT+0100 (Central European Standard Time)
+[debug] [2021-01-15T23:51:06.311Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:51:06.311Z] 
+[debug] [2021-01-15T23:51:06.322Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-15T23:51:06.323Z] > authorizing via signed-in user
+[debug] [2021-01-15T23:51:06.323Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-15T23:51:06.326Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-01-15T23:51:06.326Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-15T23:51:07.509Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Fri, 15 Jan 2021 23:51:07 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-15T23:51:07.527Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-15T23:51:09.301Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 15 Jan 2021 23:51:08 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=703","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "14" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"14\""}}
+[debug] [2021-01-15T23:51:09.324Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:51:09.332Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:51:09.334Z] > refreshing access token with scopes: []
+[debug] [2021-01-15T23:51:09.336Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-15T23:51:09.632Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Fri, 15 Jan 2021 23:51:09 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-15T23:51:09.639Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/firejam-ef3df/adminSdkConfig [none]
+[debug] [2021-01-15T23:51:10.240Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/firejam-ef3df/adminSdkConfig 200
+[debug] [2021-01-15T23:51:10.241Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/firejam-ef3df/adminSdkConfig {"projectId":"firejam-ef3df","storageBucket":"firejam-ef3df.appspot.com","locationId":"us-central"}
+[debug] [2021-01-15T23:51:10.259Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-15T23:51:10.277Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-15T23:51:10.278Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-15T23:51:10.278Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-15T23:51:10.279Z] DEBUG: [worker-~diagnostic~-30bcc77b-a689-4044-81d0-fe8fde515978]: Assigning socketPath: /tmp/fire_emu_4484.sock
+[debug] [2021-01-15T23:51:10.279Z] DEBUG: [worker-~diagnostic~-30bcc77b-a689-4044-81d0-fe8fde515978]: BUSY
+[debug] [2021-01-15T23:51:10.574Z] DEBUG: [runtime-status] [4484] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"14.9.0"}
+[debug] [2021-01-15T23:51:10.580Z] DEBUG: [runtime-status] [4484] Disabled runtime features: undefined
+[debug] [2021-01-15T23:51:10.583Z] DEBUG: [runtime-status] [4484] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:51:10.592Z] DEBUG: [runtime-status] [4484] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:51:10.593Z] DEBUG: [runtime-status] [4484] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:51:10.598Z] DEBUG: [runtime-status] [4484] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-15T23:51:10.600Z] DEBUG: [runtime-status] [4484] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:51:10.693Z] DEBUG: [runtime-status] [4484] Checked functions.config() {"config":{}}
+[debug] [2021-01-15T23:51:10.693Z] DEBUG: [runtime-status] [4484] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-15T23:51:10.693Z] DEBUG: [runtime-status] [4484] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:51:10.695Z] DEBUG: [runtime-status] [4484] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:51:10.695Z] DEBUG: [runtime-status] [4484] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:51:10.699Z] DEBUG: [runtime-status] [4484] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[warn] ⚠  Error [ERR_REQUIRE_ESM]: Must use import to load ES Module: /home/mikolaj/projects/firejam/server/lib/main.js
+require() of ES modules is not supported.
+require() of /home/mikolaj/projects/firejam/server/lib/main.js from /home/mikolaj/.nvm/versions/node/v14.9.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js is an ES module file as it is a .js file whose nearest parent package.json contains "type": "module" which defines all .js files in that package scope as ES modules.
+Instead rename main.js to end in .cjs, change the requiring code to use import(), or remove "type": "module" from /home/mikolaj/projects/firejam/server/package.json.
+
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:13)
+    at Module.load (internal/modules/cjs/loader.js:940:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:781:14)
+    at Module.require (internal/modules/cjs/loader.js:964:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at initializeRuntime (/home/mikolaj/.nvm/versions/node/v14.9.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:676:29)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async handleMessage (/home/mikolaj/.nvm/versions/node/v14.9.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:714:20) {"metadata":{"emulator":{"name":"functions"},"message":"Error [ERR_REQUIRE_ESM]: Must use import to load ES Module: /home/mikolaj/projects/firejam/server/lib/main.js\nrequire() of ES modules is not supported.\nrequire() of /home/mikolaj/projects/firejam/server/lib/main.js from /home/mikolaj/.nvm/versions/node/v14.9.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js is an ES module file as it is a .js file whose nearest parent package.json contains \"type\": \"module\" which defines all .js files in that package scope as ES modules.\nInstead rename main.js to end in .cjs, change the requiring code to use import(), or remove \"type\": \"module\" from /home/mikolaj/projects/firejam/server/package.json.\n\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:13)\n    at Module.load (internal/modules/cjs/loader.js:940:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:781:14)\n    at Module.require (internal/modules/cjs/loader.js:964:19)\n    at require (internal/modules/cjs/helpers.js:88:18)\n    at initializeRuntime (/home/mikolaj/.nvm/versions/node/v14.9.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:676:29)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n    at async handleMessage (/home/mikolaj/.nvm/versions/node/v14.9.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:714:20)"}}
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - You may be able to run "npm run build" in your functions directory to resolve this. {"metadata":{"emulator":{"name":"functions"}}}
+[debug] [2021-01-15T23:51:10.733Z] DEBUG: [worker-~diagnostic~-30bcc77b-a689-4044-81d0-fe8fde515978]: exited
+[debug] [2021-01-15T23:51:10.734Z] DEBUG: [worker-~diagnostic~-30bcc77b-a689-4044-81d0-fe8fde515978]: FINISHED
+[debug] [2021-01-15T23:52:54.847Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:52:54.850Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-15T23:52:54.850Z] CLI Version:   8.13.0
+[debug] [2021-01-15T23:52:54.850Z] Platform:      linux
+[debug] [2021-01-15T23:52:54.850Z] Node Version:  v8.17.0
+[debug] [2021-01-15T23:52:54.850Z] Time:          Sat Jan 16 2021 00:52:54 GMT+0100 (CET)
+[debug] [2021-01-15T23:52:54.850Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:52:54.851Z] 
+[debug] [2021-01-15T23:52:54.859Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-15T23:52:54.860Z] > authorizing via signed-in user
+[debug] [2021-01-15T23:52:54.860Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-15T23:52:54.863Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-01-15T23:52:54.863Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-15T23:52:55.178Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","date":"Fri, 15 Jan 2021 23:52:55 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-15T23:52:55.188Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-15T23:52:56.216Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 15 Jan 2021 23:52:55 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=706","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-15T23:52:56.238Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:52:56.240Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:52:56.254Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-15T23:52:56.271Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-15T23:52:56.272Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-15T23:52:56.272Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-15T23:52:56.272Z] DEBUG: [worker-~diagnostic~-c627caab-d807-4427-86ff-6ff63d7df143]: Assigning socketPath: /tmp/fire_emu_5451.sock
+[debug] [2021-01-15T23:52:56.273Z] DEBUG: [worker-~diagnostic~-c627caab-d807-4427-86ff-6ff63d7df143]: BUSY
+[debug] [2021-01-15T23:52:56.614Z] DEBUG: [runtime-status] [5451] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-15T23:52:56.619Z] DEBUG: [runtime-status] [5451] Disabled runtime features: undefined
+[debug] [2021-01-15T23:52:56.619Z] DEBUG: [runtime-status] [5451] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:52:56.620Z] DEBUG: [runtime-status] [5451] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:52:56.622Z] DEBUG: [runtime-status] [5451] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:52:56.629Z] DEBUG: [runtime-status] [5451] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-15T23:52:56.632Z] DEBUG: [runtime-status] [5451] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:52:56.680Z] DEBUG: [runtime-status] [5451] Checked functions.config() {"config":{}}
+[debug] [2021-01-15T23:52:56.681Z] DEBUG: [runtime-status] [5451] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-15T23:52:56.682Z] DEBUG: [runtime-status] [5451] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:52:56.685Z] DEBUG: [runtime-status] [5451] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:52:56.685Z] DEBUG: [runtime-status] [5451] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:52:56.685Z] DEBUG: [runtime-status] [5451] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-15T23:52:56.783Z] DEBUG: [runtime-status] [5451] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-15T23:52:56.793Z] DEBUG: [worker-~diagnostic~-c627caab-d807-4427-86ff-6ff63d7df143]: IDLE
+[debug] [2021-01-15T23:52:56.794Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[info] >  events.js:183 {"user":"events.js:183","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m events.js:183"}}
+[info] >        throw er; // Unhandled 'error' event {"user":"      throw er; // Unhandled 'error' event","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m       throw er; // Unhandled 'error' event"}}
+[info] >        ^ {"user":"      ^","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m       ^"}}
+[info] >   {"user":"","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m "}}
+[info] >  Error: listen EADDRINUSE :::3001 {"user":"Error: listen EADDRINUSE :::3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Error: listen EADDRINUSE :::3001"}}
+[info] >      at Server.setupListenHandle [as _listen2] (net.js:1360:14) {"user":"    at Server.setupListenHandle [as _listen2] (net.js:1360:14)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Server.setupListenHandle [as _listen2] (net.js:1360:14)"}}
+[info] >      at listenInCluster (net.js:1401:12) {"user":"    at listenInCluster (net.js:1401:12)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at listenInCluster (net.js:1401:12)"}}
+[info] >      at Server.listen (net.js:1485:7) {"user":"    at Server.listen (net.js:1485:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Server.listen (net.js:1485:7)"}}
+[info] >      at Application.listen (/home/mikolaj/projects/firejam/node_modules/koa/lib/application.js:82:19) {"user":"    at Application.listen (/home/mikolaj/projects/firejam/node_modules/koa/lib/application.js:82:19)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Application.listen (/home/mikolaj/projects/firejam/node_modules/koa/lib/application.js:82:19)"}}
+[info] >      at Object.<anonymous> (/home/mikolaj/projects/firejam/server/lib/main.js:85:5) {"user":"    at Object.<anonymous> (/home/mikolaj/projects/firejam/server/lib/main.js:85:5)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Object.<anonymous> (/home/mikolaj/projects/firejam/server/lib/main.js:85:5)"}}
+[info] >      at Module._compile (module.js:653:30) {"user":"    at Module._compile (module.js:653:30)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Module._compile (module.js:653:30)"}}
+[info] >      at Object.Module._extensions..js (module.js:664:10) {"user":"    at Object.Module._extensions..js (module.js:664:10)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Object.Module._extensions..js (module.js:664:10)"}}
+[info] >      at Module.load (module.js:566:32) {"user":"    at Module.load (module.js:566:32)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Module.load (module.js:566:32)"}}
+[info] >      at tryModuleLoad (module.js:506:12) {"user":"    at tryModuleLoad (module.js:506:12)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at tryModuleLoad (module.js:506:12)"}}
+[info] >      at Function.Module._load (module.js:498:3) {"user":"    at Function.Module._load (module.js:498:3)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Function.Module._load (module.js:498:3)"}}
+[debug] [2021-01-15T23:52:56.809Z] DEBUG: [worker-~diagnostic~-c627caab-d807-4427-86ff-6ff63d7df143]: exited
+[debug] [2021-01-15T23:52:56.809Z] DEBUG: [worker-~diagnostic~-c627caab-d807-4427-86ff-6ff63d7df143]: FINISHED
+[debug] [2021-01-15T23:53:44.907Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/controllers/users.ts changed, reloading triggers
+[debug] [2021-01-15T23:53:58.810Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:53:58.813Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-15T23:53:58.814Z] CLI Version:   8.13.0
+[debug] [2021-01-15T23:53:58.814Z] Platform:      linux
+[debug] [2021-01-15T23:53:58.814Z] Node Version:  v8.17.0
+[debug] [2021-01-15T23:53:58.814Z] Time:          Sat Jan 16 2021 00:53:58 GMT+0100 (CET)
+[debug] [2021-01-15T23:53:58.814Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:53:58.814Z] 
+[debug] [2021-01-15T23:53:58.825Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-15T23:53:58.825Z] > authorizing via signed-in user
+[debug] [2021-01-15T23:53:58.826Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-15T23:53:58.830Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-15T23:53:59.917Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 15 Jan 2021 23:53:59 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=701","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-15T23:53:59.936Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:53:59.937Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:53:59.950Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-15T23:53:59.966Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-15T23:53:59.966Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-15T23:53:59.966Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-15T23:53:59.967Z] DEBUG: [worker-~diagnostic~-56e59400-dcdf-4b14-a968-18ae4150a013]: Assigning socketPath: /tmp/fire_emu_5669.sock
+[debug] [2021-01-15T23:53:59.967Z] DEBUG: [worker-~diagnostic~-56e59400-dcdf-4b14-a968-18ae4150a013]: BUSY
+[debug] [2021-01-15T23:54:00.304Z] DEBUG: [runtime-status] [5669] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-15T23:54:00.311Z] DEBUG: [runtime-status] [5669] Disabled runtime features: undefined
+[debug] [2021-01-15T23:54:00.311Z] DEBUG: [runtime-status] [5669] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:54:00.312Z] DEBUG: [runtime-status] [5669] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:54:00.315Z] DEBUG: [runtime-status] [5669] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:54:00.321Z] DEBUG: [runtime-status] [5669] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-15T23:54:00.323Z] DEBUG: [runtime-status] [5669] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:54:00.369Z] DEBUG: [runtime-status] [5669] Checked functions.config() {"config":{}}
+[debug] [2021-01-15T23:54:00.369Z] DEBUG: [runtime-status] [5669] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-15T23:54:00.370Z] DEBUG: [runtime-status] [5669] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:54:00.372Z] DEBUG: [runtime-status] [5669] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:54:00.372Z] DEBUG: [runtime-status] [5669] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:54:00.372Z] DEBUG: [runtime-status] [5669] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-15T23:54:00.437Z] DEBUG: [runtime-status] [5669] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-15T23:54:00.446Z] DEBUG: [worker-~diagnostic~-56e59400-dcdf-4b14-a968-18ae4150a013]: IDLE
+[debug] [2021-01-15T23:54:00.447Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[info] >  events.js:183 {"user":"events.js:183","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m events.js:183"}}
+[info] >        throw er; // Unhandled 'error' event {"user":"      throw er; // Unhandled 'error' event","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m       throw er; // Unhandled 'error' event"}}
+[info] >        ^ {"user":"      ^","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m       ^"}}
+[info] >   {"user":"","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m "}}
+[info] >  Error: listen EADDRINUSE :::3001 {"user":"Error: listen EADDRINUSE :::3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Error: listen EADDRINUSE :::3001"}}
+[info] >      at Server.setupListenHandle [as _listen2] (net.js:1360:14) {"user":"    at Server.setupListenHandle [as _listen2] (net.js:1360:14)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Server.setupListenHandle [as _listen2] (net.js:1360:14)"}}
+[info] >      at listenInCluster (net.js:1401:12) {"user":"    at listenInCluster (net.js:1401:12)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at listenInCluster (net.js:1401:12)"}}
+[info] >      at Server.listen (net.js:1485:7) {"user":"    at Server.listen (net.js:1485:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Server.listen (net.js:1485:7)"}}
+[info] >      at Application.listen (/home/mikolaj/projects/firejam/node_modules/koa/lib/application.js:82:19) {"user":"    at Application.listen (/home/mikolaj/projects/firejam/node_modules/koa/lib/application.js:82:19)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Application.listen (/home/mikolaj/projects/firejam/node_modules/koa/lib/application.js:82:19)"}}
+[info] >      at Object.<anonymous> (/home/mikolaj/projects/firejam/server/lib/main.js:85:5) {"user":"    at Object.<anonymous> (/home/mikolaj/projects/firejam/server/lib/main.js:85:5)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Object.<anonymous> (/home/mikolaj/projects/firejam/server/lib/main.js:85:5)"}}
+[info] >      at Module._compile (module.js:653:30) {"user":"    at Module._compile (module.js:653:30)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Module._compile (module.js:653:30)"}}
+[info] >      at Object.Module._extensions..js (module.js:664:10) {"user":"    at Object.Module._extensions..js (module.js:664:10)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Object.Module._extensions..js (module.js:664:10)"}}
+[info] >      at Module.load (module.js:566:32) {"user":"    at Module.load (module.js:566:32)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Module.load (module.js:566:32)"}}
+[info] >      at tryModuleLoad (module.js:506:12) {"user":"    at tryModuleLoad (module.js:506:12)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at tryModuleLoad (module.js:506:12)"}}
+[info] >      at Function.Module._load (module.js:498:3) {"user":"    at Function.Module._load (module.js:498:3)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Function.Module._load (module.js:498:3)"}}
+[debug] [2021-01-15T23:54:00.462Z] DEBUG: [worker-~diagnostic~-56e59400-dcdf-4b14-a968-18ae4150a013]: exited
+[debug] [2021-01-15T23:54:00.462Z] DEBUG: [worker-~diagnostic~-56e59400-dcdf-4b14-a968-18ae4150a013]: FINISHED
+[debug] [2021-01-15T23:55:09.234Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/controllers/users.ts changed, reloading triggers
+[debug] [2021-01-15T23:55:23.457Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:55:23.460Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-15T23:55:23.460Z] CLI Version:   8.13.0
+[debug] [2021-01-15T23:55:23.461Z] Platform:      linux
+[debug] [2021-01-15T23:55:23.461Z] Node Version:  v8.17.0
+[debug] [2021-01-15T23:55:23.461Z] Time:          Sat Jan 16 2021 00:55:23 GMT+0100 (CET)
+[debug] [2021-01-15T23:55:23.461Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:55:23.461Z] 
+[debug] [2021-01-15T23:55:23.469Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-15T23:55:23.470Z] > authorizing via signed-in user
+[debug] [2021-01-15T23:55:23.470Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-15T23:55:23.474Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-15T23:55:24.498Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 15 Jan 2021 23:55:24 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=711","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-15T23:55:24.519Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:55:24.520Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:55:24.534Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-15T23:55:24.549Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-15T23:55:24.549Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-15T23:55:24.549Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-15T23:55:24.550Z] DEBUG: [worker-~diagnostic~-c5bd330d-da30-408c-842e-2270ecc3b7a2]: Assigning socketPath: /tmp/fire_emu_6727.sock
+[debug] [2021-01-15T23:55:24.550Z] DEBUG: [worker-~diagnostic~-c5bd330d-da30-408c-842e-2270ecc3b7a2]: BUSY
+[debug] [2021-01-15T23:55:24.910Z] DEBUG: [runtime-status] [6727] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-15T23:55:24.918Z] DEBUG: [runtime-status] [6727] Disabled runtime features: undefined
+[debug] [2021-01-15T23:55:24.919Z] DEBUG: [runtime-status] [6727] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:55:24.919Z] DEBUG: [runtime-status] [6727] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:55:24.920Z] DEBUG: [runtime-status] [6727] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:55:24.929Z] DEBUG: [runtime-status] [6727] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-15T23:55:24.929Z] DEBUG: [runtime-status] [6727] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:55:24.985Z] DEBUG: [runtime-status] [6727] Checked functions.config() {"config":{}}
+[debug] [2021-01-15T23:55:24.985Z] DEBUG: [runtime-status] [6727] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-15T23:55:24.986Z] DEBUG: [runtime-status] [6727] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:55:24.988Z] DEBUG: [runtime-status] [6727] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:55:24.988Z] DEBUG: [runtime-status] [6727] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:55:24.989Z] DEBUG: [runtime-status] [6727] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-15T23:55:25.095Z] DEBUG: [runtime-status] [6727] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-15T23:55:25.111Z] DEBUG: [worker-~diagnostic~-c5bd330d-da30-408c-842e-2270ecc3b7a2]: IDLE
+[debug] [2021-01-15T23:55:25.111Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[info] >  events.js:183 {"user":"events.js:183","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m events.js:183"}}
+[info] >        throw er; // Unhandled 'error' event {"user":"      throw er; // Unhandled 'error' event","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m       throw er; // Unhandled 'error' event"}}
+[info] >        ^ {"user":"      ^","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m       ^"}}
+[info] >   {"user":"","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m "}}
+[info] >  Error: listen EADDRINUSE :::3001 {"user":"Error: listen EADDRINUSE :::3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Error: listen EADDRINUSE :::3001"}}
+[info] >      at Server.setupListenHandle [as _listen2] (net.js:1360:14) {"user":"    at Server.setupListenHandle [as _listen2] (net.js:1360:14)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Server.setupListenHandle [as _listen2] (net.js:1360:14)"}}
+[info] >      at listenInCluster (net.js:1401:12) {"user":"    at listenInCluster (net.js:1401:12)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at listenInCluster (net.js:1401:12)"}}
+[info] >      at Server.listen (net.js:1485:7) {"user":"    at Server.listen (net.js:1485:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Server.listen (net.js:1485:7)"}}
+[info] >      at Application.listen (/home/mikolaj/projects/firejam/node_modules/koa/lib/application.js:82:19) {"user":"    at Application.listen (/home/mikolaj/projects/firejam/node_modules/koa/lib/application.js:82:19)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Application.listen (/home/mikolaj/projects/firejam/node_modules/koa/lib/application.js:82:19)"}}
+[info] >      at Object.<anonymous> (/home/mikolaj/projects/firejam/server/lib/main.js:85:5) {"user":"    at Object.<anonymous> (/home/mikolaj/projects/firejam/server/lib/main.js:85:5)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Object.<anonymous> (/home/mikolaj/projects/firejam/server/lib/main.js:85:5)"}}
+[info] >      at Module._compile (module.js:653:30) {"user":"    at Module._compile (module.js:653:30)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Module._compile (module.js:653:30)"}}
+[info] >      at Object.Module._extensions..js (module.js:664:10) {"user":"    at Object.Module._extensions..js (module.js:664:10)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Object.Module._extensions..js (module.js:664:10)"}}
+[info] >      at Module.load (module.js:566:32) {"user":"    at Module.load (module.js:566:32)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Module.load (module.js:566:32)"}}
+[info] >      at tryModuleLoad (module.js:506:12) {"user":"    at tryModuleLoad (module.js:506:12)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at tryModuleLoad (module.js:506:12)"}}
+[info] >      at Function.Module._load (module.js:498:3) {"user":"    at Function.Module._load (module.js:498:3)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at Function.Module._load (module.js:498:3)"}}
+[debug] [2021-01-15T23:55:25.146Z] DEBUG: [worker-~diagnostic~-c5bd330d-da30-408c-842e-2270ecc3b7a2]: exited
+[debug] [2021-01-15T23:55:25.149Z] DEBUG: [worker-~diagnostic~-c5bd330d-da30-408c-842e-2270ecc3b7a2]: FINISHED
+[debug] [2021-01-15T23:57:29.301Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:57:29.304Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-15T23:57:29.304Z] CLI Version:   8.13.0
+[debug] [2021-01-15T23:57:29.305Z] Platform:      linux
+[debug] [2021-01-15T23:57:29.305Z] Node Version:  v8.17.0
+[debug] [2021-01-15T23:57:29.305Z] Time:          Sat Jan 16 2021 00:57:29 GMT+0100 (CET)
+[debug] [2021-01-15T23:57:29.305Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:57:29.305Z] 
+[debug] [2021-01-15T23:57:29.316Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-15T23:57:29.317Z] > authorizing via signed-in user
+[debug] [2021-01-15T23:57:29.317Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-15T23:57:29.321Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-15T23:57:30.457Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 15 Jan 2021 23:57:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=705","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-15T23:57:30.474Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:57:30.476Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:57:30.488Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-15T23:57:30.503Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-15T23:57:30.504Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-15T23:57:30.504Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-15T23:57:30.504Z] DEBUG: [worker-~diagnostic~-3f1ca419-b946-423f-bdea-225a46c36359]: Assigning socketPath: /tmp/fire_emu_7469.sock
+[debug] [2021-01-15T23:57:30.505Z] DEBUG: [worker-~diagnostic~-3f1ca419-b946-423f-bdea-225a46c36359]: BUSY
+[debug] [2021-01-15T23:57:30.816Z] DEBUG: [runtime-status] [7469] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-15T23:57:30.820Z] DEBUG: [runtime-status] [7469] Disabled runtime features: undefined
+[debug] [2021-01-15T23:57:30.821Z] DEBUG: [runtime-status] [7469] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:57:30.821Z] DEBUG: [runtime-status] [7469] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:57:30.825Z] DEBUG: [runtime-status] [7469] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:57:30.832Z] DEBUG: [runtime-status] [7469] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-15T23:57:30.833Z] DEBUG: [runtime-status] [7469] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:57:30.875Z] DEBUG: [runtime-status] [7469] Checked functions.config() {"config":{}}
+[debug] [2021-01-15T23:57:30.876Z] DEBUG: [runtime-status] [7469] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-15T23:57:30.877Z] DEBUG: [runtime-status] [7469] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:57:30.879Z] DEBUG: [runtime-status] [7469] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:57:30.880Z] DEBUG: [runtime-status] [7469] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:57:30.880Z] DEBUG: [runtime-status] [7469] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-15T23:57:30.948Z] DEBUG: [runtime-status] [7469] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-15T23:57:30.958Z] DEBUG: [worker-~diagnostic~-3f1ca419-b946-423f-bdea-225a46c36359]: IDLE
+[debug] [2021-01-15T23:57:30.958Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[info] >  TEST {"user":"TEST","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m TEST"}}
+[info] >  UserRecord { {"user":"UserRecord {","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m UserRecord {"}}
+[info] >    uid: 'hgdSFr2GIhYkyKeHzO0uiBSFLKg2', {"user":"  uid: 'hgdSFr2GIhYkyKeHzO0uiBSFLKg2',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   uid: 'hgdSFr2GIhYkyKeHzO0uiBSFLKg2',"}}
+[info] >    email: 'mikolaj6r@gmail.com', {"user":"  email: 'mikolaj6r@gmail.com',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   email: 'mikolaj6r@gmail.com',"}}
+[info] >    emailVerified: true, {"user":"  emailVerified: true,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   emailVerified: true,"}}
+[info] >    displayName: undefined, {"user":"  displayName: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   displayName: undefined,"}}
+[info] >    photoURL: undefined, {"user":"  photoURL: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   photoURL: undefined,"}}
+[info] >    phoneNumber: undefined, {"user":"  phoneNumber: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   phoneNumber: undefined,"}}
+[info] >    disabled: false, {"user":"  disabled: false,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   disabled: false,"}}
+[info] >    metadata:  {"user":"  metadata: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   metadata: "}}
+[info] >     UserMetadata { {"user":"   UserMetadata {","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    UserMetadata {"}}
+[info] >       creationTime: 'Tue, 12 Jan 2021 11:25:04 GMT', {"user":"     creationTime: 'Tue, 12 Jan 2021 11:25:04 GMT',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      creationTime: 'Tue, 12 Jan 2021 11:25:04 GMT',"}}
+[info] >       lastSignInTime: 'Tue, 12 Jan 2021 14:52:53 GMT', {"user":"     lastSignInTime: 'Tue, 12 Jan 2021 14:52:53 GMT',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      lastSignInTime: 'Tue, 12 Jan 2021 14:52:53 GMT',"}}
+[info] >       lastRefreshTime: 'Fri, 15 Jan 2021 23:58:15 GMT' }, {"user":"     lastRefreshTime: 'Fri, 15 Jan 2021 23:58:15 GMT' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      lastRefreshTime: 'Fri, 15 Jan 2021 23:58:15 GMT' },"}}
+[info] >    providerData:  {"user":"  providerData: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   providerData: "}}
+[info] >     [ UserInfo { {"user":"   [ UserInfo {","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    [ UserInfo {"}}
+[info] >         uid: 'mikolaj6r@gmail.com', {"user":"       uid: 'mikolaj6r@gmail.com',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        uid: 'mikolaj6r@gmail.com',"}}
+[info] >         displayName: undefined, {"user":"       displayName: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        displayName: undefined,"}}
+[info] >         email: 'mikolaj6r@gmail.com', {"user":"       email: 'mikolaj6r@gmail.com',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        email: 'mikolaj6r@gmail.com',"}}
+[info] >         photoURL: undefined, {"user":"       photoURL: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        photoURL: undefined,"}}
+[info] >         providerId: 'password', {"user":"       providerId: 'password',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        providerId: 'password',"}}
+[info] >         phoneNumber: undefined } ], {"user":"       phoneNumber: undefined } ],","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        phoneNumber: undefined } ],"}}
+[info] >    passwordHash: undefined, {"user":"  passwordHash: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   passwordHash: undefined,"}}
+[info] >    passwordSalt: undefined, {"user":"  passwordSalt: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   passwordSalt: undefined,"}}
+[info] >    tokensValidAfterTime: 'Tue, 12 Jan 2021 14:53:02 GMT', {"user":"  tokensValidAfterTime: 'Tue, 12 Jan 2021 14:53:02 GMT',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   tokensValidAfterTime: 'Tue, 12 Jan 2021 14:53:02 GMT',"}}
+[info] >    tenantId: undefined } {"user":"  tenantId: undefined }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   tenantId: undefined }"}}
+[info] >  TEST {"user":"TEST","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m TEST"}}
+[info] >  UserRecord { {"user":"UserRecord {","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m UserRecord {"}}
+[info] >    uid: 'hgdSFr2GIhYkyKeHzO0uiBSFLKg2', {"user":"  uid: 'hgdSFr2GIhYkyKeHzO0uiBSFLKg2',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   uid: 'hgdSFr2GIhYkyKeHzO0uiBSFLKg2',"}}
+[info] >    email: 'mikolaj6r@gmail.com', {"user":"  email: 'mikolaj6r@gmail.com',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   email: 'mikolaj6r@gmail.com',"}}
+[info] >    emailVerified: true, {"user":"  emailVerified: true,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   emailVerified: true,"}}
+[info] >    displayName: undefined, {"user":"  displayName: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   displayName: undefined,"}}
+[info] >    photoURL: undefined, {"user":"  photoURL: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   photoURL: undefined,"}}
+[info] >    phoneNumber: undefined, {"user":"  phoneNumber: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   phoneNumber: undefined,"}}
+[info] >    disabled: false, {"user":"  disabled: false,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   disabled: false,"}}
+[info] >    metadata:  {"user":"  metadata: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   metadata: "}}
+[info] >     UserMetadata { {"user":"   UserMetadata {","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    UserMetadata {"}}
+[info] >       creationTime: 'Tue, 12 Jan 2021 11:25:04 GMT', {"user":"     creationTime: 'Tue, 12 Jan 2021 11:25:04 GMT',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      creationTime: 'Tue, 12 Jan 2021 11:25:04 GMT',"}}
+[info] >       lastSignInTime: 'Tue, 12 Jan 2021 14:52:53 GMT', {"user":"     lastSignInTime: 'Tue, 12 Jan 2021 14:52:53 GMT',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      lastSignInTime: 'Tue, 12 Jan 2021 14:52:53 GMT',"}}
+[info] >       lastRefreshTime: 'Fri, 15 Jan 2021 23:58:15 GMT' }, {"user":"     lastRefreshTime: 'Fri, 15 Jan 2021 23:58:15 GMT' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      lastRefreshTime: 'Fri, 15 Jan 2021 23:58:15 GMT' },"}}
+[info] >    providerData:  {"user":"  providerData: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   providerData: "}}
+[info] >     [ UserInfo { {"user":"   [ UserInfo {","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    [ UserInfo {"}}
+[info] >         uid: 'mikolaj6r@gmail.com', {"user":"       uid: 'mikolaj6r@gmail.com',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        uid: 'mikolaj6r@gmail.com',"}}
+[info] >         displayName: undefined, {"user":"       displayName: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        displayName: undefined,"}}
+[info] >         email: 'mikolaj6r@gmail.com', {"user":"       email: 'mikolaj6r@gmail.com',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        email: 'mikolaj6r@gmail.com',"}}
+[info] >         photoURL: undefined, {"user":"       photoURL: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        photoURL: undefined,"}}
+[info] >         providerId: 'password', {"user":"       providerId: 'password',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        providerId: 'password',"}}
+[info] >         phoneNumber: undefined } ], {"user":"       phoneNumber: undefined } ],","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m        phoneNumber: undefined } ],"}}
+[info] >    passwordHash: undefined, {"user":"  passwordHash: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   passwordHash: undefined,"}}
+[info] >    passwordSalt: undefined, {"user":"  passwordSalt: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   passwordSalt: undefined,"}}
+[info] >    tokensValidAfterTime: 'Tue, 12 Jan 2021 14:53:02 GMT', {"user":"  tokensValidAfterTime: 'Tue, 12 Jan 2021 14:53:02 GMT',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   tokensValidAfterTime: 'Tue, 12 Jan 2021 14:53:02 GMT',"}}
+[info] >    tenantId: undefined } {"user":"  tenantId: undefined }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   tenantId: undefined }"}}
+[debug] [2021-01-15T23:59:04.211Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/controllers/users.ts changed, reloading triggers
+[debug] [2021-01-15T23:59:35.216Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:59:35.220Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-15T23:59:35.220Z] CLI Version:   8.13.0
+[debug] [2021-01-15T23:59:35.220Z] Platform:      linux
+[debug] [2021-01-15T23:59:35.220Z] Node Version:  v8.17.0
+[debug] [2021-01-15T23:59:35.221Z] Time:          Sat Jan 16 2021 00:59:35 GMT+0100 (CET)
+[debug] [2021-01-15T23:59:35.221Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T23:59:35.221Z] 
+[debug] [2021-01-15T23:59:35.235Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-15T23:59:35.235Z] > authorizing via signed-in user
+[debug] [2021-01-15T23:59:35.236Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-15T23:59:35.242Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-15T23:59:36.205Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 15 Jan 2021 23:59:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=697","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-15T23:59:36.230Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:59:36.232Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-15T23:59:36.263Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-15T23:59:36.284Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-15T23:59:36.284Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-15T23:59:36.284Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-15T23:59:36.285Z] DEBUG: [worker-~diagnostic~-23f5356a-1c71-4956-ac58-4bc216a06fbc]: Assigning socketPath: /tmp/fire_emu_7829.sock
+[debug] [2021-01-15T23:59:36.286Z] DEBUG: [worker-~diagnostic~-23f5356a-1c71-4956-ac58-4bc216a06fbc]: BUSY
+[debug] [2021-01-15T23:59:36.754Z] DEBUG: [runtime-status] [7829] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-15T23:59:36.773Z] DEBUG: [runtime-status] [7829] Disabled runtime features: undefined
+[debug] [2021-01-15T23:59:36.774Z] DEBUG: [runtime-status] [7829] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:59:36.775Z] DEBUG: [runtime-status] [7829] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:59:36.775Z] DEBUG: [runtime-status] [7829] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:59:36.780Z] DEBUG: [runtime-status] [7829] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-15T23:59:36.780Z] DEBUG: [runtime-status] [7829] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:59:36.840Z] DEBUG: [runtime-status] [7829] Checked functions.config() {"config":{}}
+[debug] [2021-01-15T23:59:36.840Z] DEBUG: [runtime-status] [7829] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-15T23:59:36.841Z] DEBUG: [runtime-status] [7829] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:59:36.846Z] DEBUG: [runtime-status] [7829] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-15T23:59:36.846Z] DEBUG: [runtime-status] [7829] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-15T23:59:36.846Z] DEBUG: [runtime-status] [7829] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-15T23:59:36.938Z] DEBUG: [runtime-status] [7829] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-15T23:59:36.948Z] DEBUG: [worker-~diagnostic~-23f5356a-1c71-4956-ac58-4bc216a06fbc]: IDLE
+[debug] [2021-01-15T23:59:36.949Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[debug] [2021-01-16T00:26:01.970Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/routes/users.ts changed, reloading triggers
+[debug] [2021-01-16T00:40:09.513Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T00:40:09.516Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-16T00:40:09.516Z] CLI Version:   8.13.0
+[debug] [2021-01-16T00:40:09.516Z] Platform:      linux
+[debug] [2021-01-16T00:40:09.516Z] Node Version:  v8.17.0
+[debug] [2021-01-16T00:40:09.516Z] Time:          Sat Jan 16 2021 01:40:09 GMT+0100 (CET)
+[debug] [2021-01-16T00:40:09.517Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T00:40:09.517Z] 
+[debug] [2021-01-16T00:40:09.527Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-16T00:40:09.528Z] > authorizing via signed-in user
+[debug] [2021-01-16T00:40:09.528Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-16T00:40:09.531Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-01-16T00:40:09.532Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-16T00:40:09.873Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sat, 16 Jan 2021 00:40:09 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-16T00:40:09.891Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-16T00:40:10.969Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 16 Jan 2021 00:40:10 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=790","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-16T00:40:10.990Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T00:40:10.997Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T00:40:11.016Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-16T00:40:11.034Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-16T00:40:11.035Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-16T00:40:11.035Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-16T00:40:11.035Z] DEBUG: [worker-~diagnostic~-9b86697f-c5ee-4c96-b552-dab44a3991f7]: Assigning socketPath: /tmp/fire_emu_11395.sock
+[debug] [2021-01-16T00:40:11.036Z] DEBUG: [worker-~diagnostic~-9b86697f-c5ee-4c96-b552-dab44a3991f7]: BUSY
+[debug] [2021-01-16T00:40:11.368Z] DEBUG: [runtime-status] [11395] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-16T00:40:11.373Z] DEBUG: [runtime-status] [11395] Disabled runtime features: undefined
+[debug] [2021-01-16T00:40:11.373Z] DEBUG: [runtime-status] [11395] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T00:40:11.375Z] DEBUG: [runtime-status] [11395] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T00:40:11.376Z] DEBUG: [runtime-status] [11395] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T00:40:11.383Z] DEBUG: [runtime-status] [11395] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-16T00:40:11.385Z] DEBUG: [runtime-status] [11395] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T00:40:11.453Z] DEBUG: [runtime-status] [11395] Checked functions.config() {"config":{}}
+[debug] [2021-01-16T00:40:11.454Z] DEBUG: [runtime-status] [11395] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-16T00:40:11.455Z] DEBUG: [runtime-status] [11395] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T00:40:11.457Z] DEBUG: [runtime-status] [11395] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T00:40:11.457Z] DEBUG: [runtime-status] [11395] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T00:40:11.458Z] DEBUG: [runtime-status] [11395] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-16T00:40:11.580Z] DEBUG: [runtime-status] [11395] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-16T00:40:11.594Z] DEBUG: [worker-~diagnostic~-9b86697f-c5ee-4c96-b552-dab44a3991f7]: IDLE
+[debug] [2021-01-16T00:40:11.594Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[info] >  { Error: There is no user record corresponding to the provided identifier. {"user":"{ Error: There is no user record corresponding to the provided identifier.","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m { Error: There is no user record corresponding to the provided identifier."}}
+[info] >      at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28) {"user":"    at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.FirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:42:28)"}}
+[info] >      at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28) {"user":"    at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at FirebaseAuthError.PrefixedFirebaseError [as constructor] (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:88:28)"}}
+[info] >      at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16) {"user":"    at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at new FirebaseAuthError (/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/utils/error.js:147:16)"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:518:15"}}
+[info] >      at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13 {"user":"    at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at /home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/auth/auth-api-request.js:1476:13"}}
+[info] >      at <anonymous> {"user":"    at <anonymous>","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at <anonymous>"}}
+[info] >      at process._tickCallback (internal/process/next_tick.js:189:7) {"user":"    at process._tickCallback (internal/process/next_tick.js:189:7)","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m     at process._tickCallback (internal/process/next_tick.js:189:7)"}}
+[info] >    errorInfo:  {"user":"  errorInfo: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   errorInfo: "}}
+[info] >     { code: 'auth/user-not-found', {"user":"   { code: 'auth/user-not-found',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    { code: 'auth/user-not-found',"}}
+[info] >       message: 'There is no user record corresponding to the provided identifier.' }, {"user":"     message: 'There is no user record corresponding to the provided identifier.' },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      message: 'There is no user record corresponding to the provided identifier.' },"}}
+[info] >    codePrefix: 'auth' } {"user":"  codePrefix: 'auth' }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   codePrefix: 'auth' }"}}
+[debug] [2021-01-16T01:04:36.434Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/services/user.ts changed, reloading triggers
+[debug] [2021-01-16T01:04:52.622Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:04:52.625Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-16T01:04:52.625Z] CLI Version:   8.13.0
+[debug] [2021-01-16T01:04:52.626Z] Platform:      linux
+[debug] [2021-01-16T01:04:52.626Z] Node Version:  v8.17.0
+[debug] [2021-01-16T01:04:52.626Z] Time:          Sat Jan 16 2021 02:04:52 GMT+0100 (CET)
+[debug] [2021-01-16T01:04:52.626Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:04:52.626Z] 
+[debug] [2021-01-16T01:04:52.635Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-16T01:04:52.635Z] > authorizing via signed-in user
+[debug] [2021-01-16T01:04:52.635Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-16T01:04:52.640Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-16T01:04:53.638Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 16 Jan 2021 01:04:53 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=695","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-16T01:04:53.668Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:04:53.674Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:04:53.697Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-16T01:04:53.712Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-16T01:04:53.712Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-16T01:04:53.713Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-16T01:04:53.713Z] DEBUG: [worker-~diagnostic~-e990efee-ff43-4cfd-8015-35beee370f48]: Assigning socketPath: /tmp/fire_emu_13260.sock
+[debug] [2021-01-16T01:04:53.714Z] DEBUG: [worker-~diagnostic~-e990efee-ff43-4cfd-8015-35beee370f48]: BUSY
+[debug] [2021-01-16T01:04:53.901Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/routes/users.ts changed, reloading triggers
+[debug] [2021-01-16T01:06:10.914Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:06:10.917Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-16T01:06:10.918Z] CLI Version:   8.13.0
+[debug] [2021-01-16T01:06:10.919Z] Platform:      linux
+[debug] [2021-01-16T01:06:10.919Z] Node Version:  v8.17.0
+[debug] [2021-01-16T01:06:10.919Z] Time:          Sat Jan 16 2021 02:06:10 GMT+0100 (CET)
+[debug] [2021-01-16T01:06:10.919Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:06:10.919Z] 
+[debug] [2021-01-16T01:06:10.929Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-16T01:06:10.930Z] > authorizing via signed-in user
+[debug] [2021-01-16T01:06:10.930Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-16T01:06:10.936Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-16T01:06:11.935Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 16 Jan 2021 01:06:11 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=699","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-16T01:06:11.953Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:06:11.954Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:06:11.967Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-16T01:06:11.983Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-16T01:06:11.983Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-16T01:06:11.983Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-16T01:06:11.983Z] DEBUG: [worker-~diagnostic~-d1ddda7d-7f6a-45ab-b166-8ffde094bc44]: Assigning socketPath: /tmp/fire_emu_13501.sock
+[debug] [2021-01-16T01:06:11.984Z] DEBUG: [worker-~diagnostic~-d1ddda7d-7f6a-45ab-b166-8ffde094bc44]: BUSY
+[debug] [2021-01-16T01:06:12.285Z] DEBUG: [runtime-status] [13501] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-16T01:06:12.289Z] DEBUG: [runtime-status] [13501] Disabled runtime features: undefined
+[debug] [2021-01-16T01:06:12.289Z] DEBUG: [runtime-status] [13501] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:06:12.293Z] DEBUG: [runtime-status] [13501] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:12.293Z] DEBUG: [runtime-status] [13501] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:12.299Z] DEBUG: [runtime-status] [13501] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-16T01:06:12.301Z] DEBUG: [runtime-status] [13501] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:12.367Z] DEBUG: [runtime-status] [13501] Checked functions.config() {"config":{}}
+[debug] [2021-01-16T01:06:12.367Z] DEBUG: [runtime-status] [13501] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-16T01:06:12.368Z] DEBUG: [runtime-status] [13501] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:12.370Z] DEBUG: [runtime-status] [13501] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:06:12.371Z] DEBUG: [runtime-status] [13501] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:12.371Z] DEBUG: [runtime-status] [13501] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-16T01:06:12.496Z] DEBUG: [runtime-status] [13501] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-16T01:06:12.505Z] DEBUG: [worker-~diagnostic~-d1ddda7d-7f6a-45ab-b166-8ffde094bc44]: IDLE
+[debug] [2021-01-16T01:06:12.506Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[debug] [2021-01-16T01:06:14.327Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/routes/users.ts changed, reloading triggers
+[debug] [2021-01-16T01:06:30.715Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:06:30.718Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-16T01:06:30.718Z] CLI Version:   8.13.0
+[debug] [2021-01-16T01:06:30.719Z] Platform:      linux
+[debug] [2021-01-16T01:06:30.719Z] Node Version:  v8.17.0
+[debug] [2021-01-16T01:06:30.719Z] Time:          Sat Jan 16 2021 02:06:30 GMT+0100 (CET)
+[debug] [2021-01-16T01:06:30.719Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:06:30.719Z] 
+[debug] [2021-01-16T01:06:30.727Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-16T01:06:30.727Z] > authorizing via signed-in user
+[debug] [2021-01-16T01:06:30.728Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-16T01:06:30.731Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-16T01:06:31.736Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 16 Jan 2021 01:06:31 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=700","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-16T01:06:31.751Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:06:31.752Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:06:31.767Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-16T01:06:31.784Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-16T01:06:31.785Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-16T01:06:31.785Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-16T01:06:31.785Z] DEBUG: [worker-~diagnostic~-10c2e305-39cd-4a9a-b8ca-5127f303fe01]: Assigning socketPath: /tmp/fire_emu_13657.sock
+[debug] [2021-01-16T01:06:31.786Z] DEBUG: [worker-~diagnostic~-10c2e305-39cd-4a9a-b8ca-5127f303fe01]: BUSY
+[debug] [2021-01-16T01:06:32.115Z] DEBUG: [runtime-status] [13657] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-16T01:06:32.120Z] DEBUG: [runtime-status] [13657] Disabled runtime features: undefined
+[debug] [2021-01-16T01:06:32.120Z] DEBUG: [runtime-status] [13657] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:06:32.120Z] DEBUG: [runtime-status] [13657] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:32.124Z] DEBUG: [runtime-status] [13657] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:32.130Z] DEBUG: [runtime-status] [13657] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-16T01:06:32.132Z] DEBUG: [runtime-status] [13657] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:32.176Z] DEBUG: [runtime-status] [13657] Checked functions.config() {"config":{}}
+[debug] [2021-01-16T01:06:32.176Z] DEBUG: [runtime-status] [13657] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-16T01:06:32.177Z] DEBUG: [runtime-status] [13657] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:32.179Z] DEBUG: [runtime-status] [13657] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:06:32.179Z] DEBUG: [runtime-status] [13657] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:32.180Z] DEBUG: [runtime-status] [13657] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-16T01:06:32.254Z] DEBUG: [runtime-status] [13657] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-16T01:06:32.263Z] DEBUG: [worker-~diagnostic~-10c2e305-39cd-4a9a-b8ca-5127f303fe01]: IDLE
+[debug] [2021-01-16T01:06:32.263Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[debug] [2021-01-16T01:06:36.522Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/routes/users.ts changed, reloading triggers
+[debug] [2021-01-16T01:06:50.552Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:06:50.554Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-16T01:06:50.555Z] CLI Version:   8.13.0
+[debug] [2021-01-16T01:06:50.555Z] Platform:      linux
+[debug] [2021-01-16T01:06:50.555Z] Node Version:  v8.17.0
+[debug] [2021-01-16T01:06:50.555Z] Time:          Sat Jan 16 2021 02:06:50 GMT+0100 (CET)
+[debug] [2021-01-16T01:06:50.555Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:06:50.555Z] 
+[debug] [2021-01-16T01:06:50.566Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-16T01:06:50.567Z] > authorizing via signed-in user
+[debug] [2021-01-16T01:06:50.567Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-16T01:06:50.572Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-16T01:06:51.602Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 16 Jan 2021 01:06:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=771","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-16T01:06:51.620Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:06:51.622Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:06:51.635Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-16T01:06:51.651Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-16T01:06:51.651Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-16T01:06:51.651Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-16T01:06:51.652Z] DEBUG: [worker-~diagnostic~-71e0ada8-efda-4c6e-bef7-bb8643aced24]: Assigning socketPath: /tmp/fire_emu_13755.sock
+[debug] [2021-01-16T01:06:51.652Z] DEBUG: [worker-~diagnostic~-71e0ada8-efda-4c6e-bef7-bb8643aced24]: BUSY
+[debug] [2021-01-16T01:06:51.983Z] DEBUG: [runtime-status] [13755] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-16T01:06:51.988Z] DEBUG: [runtime-status] [13755] Disabled runtime features: undefined
+[debug] [2021-01-16T01:06:51.988Z] DEBUG: [runtime-status] [13755] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:06:51.989Z] DEBUG: [runtime-status] [13755] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:51.991Z] DEBUG: [runtime-status] [13755] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:51.998Z] DEBUG: [runtime-status] [13755] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-16T01:06:52.001Z] DEBUG: [runtime-status] [13755] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:52.047Z] DEBUG: [runtime-status] [13755] Checked functions.config() {"config":{}}
+[debug] [2021-01-16T01:06:52.047Z] DEBUG: [runtime-status] [13755] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-16T01:06:52.049Z] DEBUG: [runtime-status] [13755] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:52.051Z] DEBUG: [runtime-status] [13755] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:06:52.051Z] DEBUG: [runtime-status] [13755] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:06:52.051Z] DEBUG: [runtime-status] [13755] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-16T01:06:52.135Z] DEBUG: [runtime-status] [13755] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-16T01:06:52.146Z] DEBUG: [worker-~diagnostic~-71e0ada8-efda-4c6e-bef7-bb8643aced24]: IDLE
+[debug] [2021-01-16T01:06:52.147Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[debug] [2021-01-16T01:10:49.866Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/controllers/users.ts changed, reloading triggers
+[debug] [2021-01-16T01:11:05.856Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:11:05.859Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-16T01:11:05.859Z] CLI Version:   8.13.0
+[debug] [2021-01-16T01:11:05.860Z] Platform:      linux
+[debug] [2021-01-16T01:11:05.860Z] Node Version:  v8.17.0
+[debug] [2021-01-16T01:11:05.860Z] Time:          Sat Jan 16 2021 02:11:05 GMT+0100 (CET)
+[debug] [2021-01-16T01:11:05.860Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:11:05.860Z] 
+[debug] [2021-01-16T01:11:05.868Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-16T01:11:05.868Z] > authorizing via signed-in user
+[debug] [2021-01-16T01:11:05.869Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-16T01:11:05.872Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-16T01:11:06.982Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 16 Jan 2021 01:11:06 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=695","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-16T01:11:07.000Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:11:07.001Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:11:07.019Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-16T01:11:07.042Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-16T01:11:07.042Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-16T01:11:07.043Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-16T01:11:07.043Z] DEBUG: [worker-~diagnostic~-704498ae-115b-45e8-b26c-b997677ba822]: Assigning socketPath: /tmp/fire_emu_14281.sock
+[debug] [2021-01-16T01:11:07.043Z] DEBUG: [worker-~diagnostic~-704498ae-115b-45e8-b26c-b997677ba822]: BUSY
+[debug] [2021-01-16T01:11:07.393Z] DEBUG: [runtime-status] [14281] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-16T01:11:07.397Z] DEBUG: [runtime-status] [14281] Disabled runtime features: undefined
+[debug] [2021-01-16T01:11:07.397Z] DEBUG: [runtime-status] [14281] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:11:07.398Z] DEBUG: [runtime-status] [14281] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:11:07.401Z] DEBUG: [runtime-status] [14281] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:11:07.408Z] DEBUG: [runtime-status] [14281] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-16T01:11:07.411Z] DEBUG: [runtime-status] [14281] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:11:07.458Z] DEBUG: [runtime-status] [14281] Checked functions.config() {"config":{}}
+[debug] [2021-01-16T01:11:07.458Z] DEBUG: [runtime-status] [14281] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-16T01:11:07.460Z] DEBUG: [runtime-status] [14281] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:11:07.462Z] DEBUG: [runtime-status] [14281] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:11:07.462Z] DEBUG: [runtime-status] [14281] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:11:07.462Z] DEBUG: [runtime-status] [14281] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-16T01:11:07.539Z] DEBUG: [runtime-status] [14281] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-16T01:11:07.548Z] DEBUG: [worker-~diagnostic~-704498ae-115b-45e8-b26c-b997677ba822]: IDLE
+[debug] [2021-01-16T01:11:07.548Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[info] >  UserRecord { {"user":"UserRecord {","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m UserRecord {"}}
+[info] >    uid: 'ICUiAnCovtO31kGqSpxSCjRT3Vp2', {"user":"  uid: 'ICUiAnCovtO31kGqSpxSCjRT3Vp2',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   uid: 'ICUiAnCovtO31kGqSpxSCjRT3Vp2',"}}
+[info] >    email: undefined, {"user":"  email: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   email: undefined,"}}
+[info] >    emailVerified: false, {"user":"  emailVerified: false,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   emailVerified: false,"}}
+[info] >    displayName: undefined, {"user":"  displayName: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   displayName: undefined,"}}
+[info] >    photoURL: undefined, {"user":"  photoURL: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   photoURL: undefined,"}}
+[info] >    phoneNumber: undefined, {"user":"  phoneNumber: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   phoneNumber: undefined,"}}
+[info] >    disabled: false, {"user":"  disabled: false,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   disabled: false,"}}
+[info] >    metadata:  {"user":"  metadata: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   metadata: "}}
+[info] >     UserMetadata { {"user":"   UserMetadata {","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    UserMetadata {"}}
+[info] >       creationTime: 'Sat, 16 Jan 2021 01:11:56 GMT', {"user":"     creationTime: 'Sat, 16 Jan 2021 01:11:56 GMT',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      creationTime: 'Sat, 16 Jan 2021 01:11:56 GMT',"}}
+[info] >       lastSignInTime: null, {"user":"     lastSignInTime: null,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      lastSignInTime: null,"}}
+[info] >       lastRefreshTime: null }, {"user":"     lastRefreshTime: null },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      lastRefreshTime: null },"}}
+[info] >    providerData: [], {"user":"  providerData: [],","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   providerData: [],"}}
+[info] >    passwordHash: undefined, {"user":"  passwordHash: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   passwordHash: undefined,"}}
+[info] >    passwordSalt: undefined, {"user":"  passwordSalt: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   passwordSalt: undefined,"}}
+[info] >    tokensValidAfterTime: 'Sat, 16 Jan 2021 01:11:56 GMT', {"user":"  tokensValidAfterTime: 'Sat, 16 Jan 2021 01:11:56 GMT',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   tokensValidAfterTime: 'Sat, 16 Jan 2021 01:11:56 GMT',"}}
+[info] >    tenantId: undefined } {"user":"  tenantId: undefined }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   tenantId: undefined }"}}
+[debug] [2021-01-16T01:12:49.253Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/services/user.ts changed, reloading triggers
+[debug] [2021-01-16T01:13:03.261Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:13:03.264Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-16T01:13:03.265Z] CLI Version:   8.13.0
+[debug] [2021-01-16T01:13:03.265Z] Platform:      linux
+[debug] [2021-01-16T01:13:03.265Z] Node Version:  v8.17.0
+[debug] [2021-01-16T01:13:03.265Z] Time:          Sat Jan 16 2021 02:13:03 GMT+0100 (CET)
+[debug] [2021-01-16T01:13:03.265Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:13:03.265Z] 
+[debug] [2021-01-16T01:13:03.274Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-16T01:13:03.274Z] > authorizing via signed-in user
+[debug] [2021-01-16T01:13:03.275Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-16T01:13:03.279Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-16T01:13:04.340Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 16 Jan 2021 01:13:04 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=691","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-16T01:13:04.357Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:13:04.358Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:13:04.371Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-16T01:13:04.388Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-16T01:13:04.388Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-16T01:13:04.388Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-16T01:13:04.389Z] DEBUG: [worker-~diagnostic~-4516b66d-f4d3-4b7e-9597-3d7c2703996c]: Assigning socketPath: /tmp/fire_emu_14449.sock
+[debug] [2021-01-16T01:13:04.389Z] DEBUG: [worker-~diagnostic~-4516b66d-f4d3-4b7e-9597-3d7c2703996c]: BUSY
+[debug] [2021-01-16T01:13:04.692Z] DEBUG: [runtime-status] [14449] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-16T01:13:04.696Z] DEBUG: [runtime-status] [14449] Disabled runtime features: undefined
+[debug] [2021-01-16T01:13:04.696Z] DEBUG: [runtime-status] [14449] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:13:04.698Z] DEBUG: [runtime-status] [14449] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:13:04.700Z] DEBUG: [runtime-status] [14449] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:13:04.705Z] DEBUG: [runtime-status] [14449] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-16T01:13:04.708Z] DEBUG: [runtime-status] [14449] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:13:04.750Z] DEBUG: [runtime-status] [14449] Checked functions.config() {"config":{}}
+[debug] [2021-01-16T01:13:04.750Z] DEBUG: [runtime-status] [14449] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-16T01:13:04.751Z] DEBUG: [runtime-status] [14449] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:13:04.753Z] DEBUG: [runtime-status] [14449] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:13:04.753Z] DEBUG: [runtime-status] [14449] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:13:04.754Z] DEBUG: [runtime-status] [14449] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-16T01:13:04.833Z] DEBUG: [runtime-status] [14449] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-16T01:13:04.847Z] DEBUG: [worker-~diagnostic~-4516b66d-f4d3-4b7e-9597-3d7c2703996c]: IDLE
+[debug] [2021-01-16T01:13:04.850Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[info] >  {} {"user":{},"metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m {}"}}
+[info] >  UserRecord { {"user":"UserRecord {","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m UserRecord {"}}
+[info] >    uid: 'xpHrybaV10OLOX7YEhXaq77kBQ03', {"user":"  uid: 'xpHrybaV10OLOX7YEhXaq77kBQ03',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   uid: 'xpHrybaV10OLOX7YEhXaq77kBQ03',"}}
+[info] >    email: undefined, {"user":"  email: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   email: undefined,"}}
+[info] >    emailVerified: false, {"user":"  emailVerified: false,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   emailVerified: false,"}}
+[info] >    displayName: undefined, {"user":"  displayName: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   displayName: undefined,"}}
+[info] >    photoURL: undefined, {"user":"  photoURL: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   photoURL: undefined,"}}
+[info] >    phoneNumber: undefined, {"user":"  phoneNumber: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   phoneNumber: undefined,"}}
+[info] >    disabled: false, {"user":"  disabled: false,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   disabled: false,"}}
+[info] >    metadata:  {"user":"  metadata: ","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   metadata: "}}
+[info] >     UserMetadata { {"user":"   UserMetadata {","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m    UserMetadata {"}}
+[info] >       creationTime: 'Sat, 16 Jan 2021 01:14:13 GMT', {"user":"     creationTime: 'Sat, 16 Jan 2021 01:14:13 GMT',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      creationTime: 'Sat, 16 Jan 2021 01:14:13 GMT',"}}
+[info] >       lastSignInTime: null, {"user":"     lastSignInTime: null,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      lastSignInTime: null,"}}
+[info] >       lastRefreshTime: null }, {"user":"     lastRefreshTime: null },","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m      lastRefreshTime: null },"}}
+[info] >    providerData: [], {"user":"  providerData: [],","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   providerData: [],"}}
+[info] >    passwordHash: undefined, {"user":"  passwordHash: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   passwordHash: undefined,"}}
+[info] >    passwordSalt: undefined, {"user":"  passwordSalt: undefined,","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   passwordSalt: undefined,"}}
+[info] >    tokensValidAfterTime: 'Sat, 16 Jan 2021 01:14:13 GMT', {"user":"  tokensValidAfterTime: 'Sat, 16 Jan 2021 01:14:13 GMT',","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   tokensValidAfterTime: 'Sat, 16 Jan 2021 01:14:13 GMT',"}}
+[info] >    tenantId: undefined } {"user":"  tenantId: undefined }","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m   tenantId: undefined }"}}
+[debug] [2021-01-16T01:15:09.676Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/services/user.ts changed, reloading triggers
+[debug] [2021-01-16T01:15:25.177Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:15:25.181Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-16T01:15:25.183Z] CLI Version:   8.13.0
+[debug] [2021-01-16T01:15:25.184Z] Platform:      linux
+[debug] [2021-01-16T01:15:25.184Z] Node Version:  v8.17.0
+[debug] [2021-01-16T01:15:25.184Z] Time:          Sat Jan 16 2021 02:15:25 GMT+0100 (CET)
+[debug] [2021-01-16T01:15:25.184Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:15:25.184Z] 
+[debug] [2021-01-16T01:15:25.195Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-16T01:15:25.196Z] > authorizing via signed-in user
+[debug] [2021-01-16T01:15:25.196Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-16T01:15:25.201Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-16T01:15:26.267Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 16 Jan 2021 01:15:26 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=697","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-16T01:15:26.283Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:15:26.284Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:15:26.296Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-16T01:15:26.317Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-16T01:15:26.318Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-16T01:15:26.318Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-16T01:15:26.319Z] DEBUG: [worker-~diagnostic~-c2307411-9f52-4479-b81c-f08ea7ab9c7c]: Assigning socketPath: /tmp/fire_emu_14648.sock
+[debug] [2021-01-16T01:15:26.320Z] DEBUG: [worker-~diagnostic~-c2307411-9f52-4479-b81c-f08ea7ab9c7c]: BUSY
+[debug] [2021-01-16T01:15:26.680Z] DEBUG: [runtime-status] [14648] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-16T01:15:26.689Z] DEBUG: [runtime-status] [14648] Disabled runtime features: undefined
+[debug] [2021-01-16T01:15:26.689Z] DEBUG: [runtime-status] [14648] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:15:26.689Z] DEBUG: [runtime-status] [14648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:15:26.692Z] DEBUG: [runtime-status] [14648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:15:26.698Z] DEBUG: [runtime-status] [14648] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-16T01:15:26.702Z] DEBUG: [runtime-status] [14648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:15:26.776Z] DEBUG: [runtime-status] [14648] Checked functions.config() {"config":{}}
+[debug] [2021-01-16T01:15:26.777Z] DEBUG: [runtime-status] [14648] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-16T01:15:26.780Z] DEBUG: [runtime-status] [14648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:15:26.782Z] DEBUG: [runtime-status] [14648] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:15:26.786Z] DEBUG: [runtime-status] [14648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:15:26.786Z] DEBUG: [runtime-status] [14648] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-16T01:15:26.898Z] DEBUG: [runtime-status] [14648] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-16T01:15:26.907Z] DEBUG: [worker-~diagnostic~-c2307411-9f52-4479-b81c-f08ea7ab9c7c]: IDLE
+[debug] [2021-01-16T01:15:26.907Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[debug] [2021-01-16T01:15:59.934Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/controllers/users.ts changed, reloading triggers
+[debug] [2021-01-16T01:16:14.379Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:16:14.382Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-16T01:16:14.383Z] CLI Version:   8.13.0
+[debug] [2021-01-16T01:16:14.384Z] Platform:      linux
+[debug] [2021-01-16T01:16:14.384Z] Node Version:  v8.17.0
+[debug] [2021-01-16T01:16:14.384Z] Time:          Sat Jan 16 2021 02:16:14 GMT+0100 (CET)
+[debug] [2021-01-16T01:16:14.384Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:16:14.384Z] 
+[debug] [2021-01-16T01:16:14.392Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-16T01:16:14.392Z] > authorizing via signed-in user
+[debug] [2021-01-16T01:16:14.393Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-16T01:16:14.397Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-16T01:16:15.460Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 16 Jan 2021 01:16:15 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=793","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-16T01:16:15.479Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:16:15.481Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:16:15.498Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-16T01:16:15.518Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-16T01:16:15.519Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-16T01:16:15.519Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-16T01:16:15.520Z] DEBUG: [worker-~diagnostic~-a00b0b2b-7808-46ee-813a-ddc75aef7cb5]: Assigning socketPath: /tmp/fire_emu_14788.sock
+[debug] [2021-01-16T01:16:15.520Z] DEBUG: [worker-~diagnostic~-a00b0b2b-7808-46ee-813a-ddc75aef7cb5]: BUSY
+[debug] [2021-01-16T01:16:15.866Z] DEBUG: [runtime-status] [14788] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-16T01:16:15.872Z] DEBUG: [runtime-status] [14788] Disabled runtime features: undefined
+[debug] [2021-01-16T01:16:15.872Z] DEBUG: [runtime-status] [14788] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:16:15.872Z] DEBUG: [runtime-status] [14788] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:16:15.873Z] DEBUG: [runtime-status] [14788] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:16:15.882Z] DEBUG: [runtime-status] [14788] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-16T01:16:15.882Z] DEBUG: [runtime-status] [14788] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:16:15.930Z] DEBUG: [runtime-status] [14788] Checked functions.config() {"config":{}}
+[debug] [2021-01-16T01:16:15.931Z] DEBUG: [runtime-status] [14788] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-16T01:16:15.932Z] DEBUG: [runtime-status] [14788] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:16:15.934Z] DEBUG: [runtime-status] [14788] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:16:15.934Z] DEBUG: [runtime-status] [14788] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:16:15.935Z] DEBUG: [runtime-status] [14788] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-16T01:16:16.009Z] DEBUG: [runtime-status] [14788] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-16T01:16:16.020Z] DEBUG: [worker-~diagnostic~-a00b0b2b-7808-46ee-813a-ddc75aef7cb5]: IDLE
+[debug] [2021-01-16T01:16:16.020Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 
+[debug] [2021-01-16T01:16:32.081Z] DEBUG: File /home/mikolaj/projects/firejam/server/src/routes/users.ts changed, reloading triggers
+[debug] [2021-01-16T01:16:48.051Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:16:48.054Z] Command:       /home/mikolaj/.nvm/versions/node/v8.17.0/bin/node /home/mikolaj/.nvm/versions/node/v8.17.0/bin/firebase functions:shell
+[debug] [2021-01-16T01:16:48.055Z] CLI Version:   8.13.0
+[debug] [2021-01-16T01:16:48.055Z] Platform:      linux
+[debug] [2021-01-16T01:16:48.055Z] Node Version:  v8.17.0
+[debug] [2021-01-16T01:16:48.055Z] Time:          Sat Jan 16 2021 02:16:48 GMT+0100 (CET)
+[debug] [2021-01-16T01:16:48.055Z] ----------------------------------------------------------------------
+[debug] [2021-01-16T01:16:48.055Z] 
+[debug] [2021-01-16T01:16:48.064Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-16T01:16:48.064Z] > authorizing via signed-in user
+[debug] [2021-01-16T01:16:48.064Z] [iam] checking project firejam-ef3df for permissions ["firebase.projects.get"]
+[debug] [2021-01-16T01:16:48.068Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firejam-ef3df:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-16T01:16:49.002Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 16 Jan 2021 01:16:48 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=700","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version ">=8" doesn't match your global version "8" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \">=8\" doesn't match your global version \"8\""}}
+[debug] [2021-01-16T01:16:49.023Z] defaultcredentials: writing to file /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:16:49.024Z] DEBUG: Setting GAC to /home/mikolaj/.config/firebase/mikolaj6r_gmail_com_application_default_credentials.json
+[debug] [2021-01-16T01:16:49.040Z] [functions] Watching "/home/mikolaj/projects/firejam/server" for Cloud Functions...
+[debug] [2021-01-16T01:16:49.061Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2021-01-16T01:16:49.062Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2021-01-16T01:16:49.062Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2021-01-16T01:16:49.063Z] DEBUG: [worker-~diagnostic~-eb429729-117e-4fb0-9948-4845287a5a2b]: Assigning socketPath: /tmp/fire_emu_14898.sock
+[debug] [2021-01-16T01:16:49.064Z] DEBUG: [worker-~diagnostic~-eb429729-117e-4fb0-9948-4845287a5a2b]: BUSY
+[debug] [2021-01-16T01:16:49.470Z] DEBUG: [runtime-status] [14898] Functions runtime initialized. {"cwd":"/home/mikolaj/projects/firejam/server","node_version":"8.17.0"}
+[debug] [2021-01-16T01:16:49.476Z] DEBUG: [runtime-status] [14898] Disabled runtime features: undefined
+[debug] [2021-01-16T01:16:49.476Z] DEBUG: [runtime-status] [14898] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:16:49.476Z] DEBUG: [runtime-status] [14898] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:16:49.477Z] DEBUG: [runtime-status] [14898] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:16:49.485Z] DEBUG: [runtime-status] [14898] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2021-01-16T01:16:49.487Z] DEBUG: [runtime-status] [14898] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:16:49.547Z] DEBUG: [runtime-status] [14898] Checked functions.config() {"config":{}}
+[debug] [2021-01-16T01:16:49.549Z] DEBUG: [runtime-status] [14898] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2021-01-16T01:16:49.550Z] DEBUG: [runtime-status] [14898] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:16:49.552Z] DEBUG: [runtime-status] [14898] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}
+[debug] [2021-01-16T01:16:49.552Z] DEBUG: [runtime-status] [14898] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.13.1","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-functions/lib/index.js"}
+[debug] [2021-01-16T01:16:49.553Z] DEBUG: [runtime-status] [14898] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"/home/mikolaj/projects/firejam/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2021-01-16T01:16:49.665Z] DEBUG: [runtime-status] [14898] initializeApp(DEFAULT) {"databaseURL":"https://firejam-ef3df.firebaseio.com","storageBucket":"firejam-ef3df.appspot.com","projectId":"firejam-ef3df"}
+[info] >  Server running on port 3001 {"user":"Server running on port 3001","metadata":{"emulator":{"name":"functions"},"message":"\u001b[90m> \u001b[39m Server running on port 3001"}}
+[debug] [2021-01-16T01:16:49.677Z] DEBUG: [worker-~diagnostic~-eb429729-117e-4fb0-9948-4845287a5a2b]: IDLE
+[debug] [2021-01-16T01:16:49.677Z] [functions[firejamApi]] http function initialized (http://localhost:5000/firejam-ef3df/us-central1/firejamApi).
+[info] i  functions: Loaded functions: firejamApi 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub 

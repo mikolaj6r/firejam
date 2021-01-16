@@ -14,6 +14,8 @@ import Events from '../pages/Events';
 import LoggedLayout from '../containers/LoggedLayout';
 import Clients from '../pages/Clients';
 import Users from '../pages/Users';
+import EditUser from '../pages/user/EditUser';
+import CreateUser from '../pages/user/CreateUser';
 
 function Application() {
   const user = useContext(UserContext);
@@ -31,6 +33,8 @@ function Application() {
         <Clients path="/app/clients" />
         <Dashboard path="/app/dashboard" />
         <Users path="/app/users" />
+        <EditUser path="/app/users/:uid"/>
+        <CreateUser path="/app/users/create"/>
         <Redirect from="*" to="/app/dashboard" noThrow />
       </Router>
       </LoggedLayout>

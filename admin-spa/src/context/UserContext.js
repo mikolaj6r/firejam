@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import { auth, generateUserDocument } from '../firebase'
 
 const UserContext = createContext(null);
@@ -22,6 +22,16 @@ const [user, setUser] = useState(null);
       {children}
     </UserContext.Provider>
   );
+}
+
+export function useUser(){
+  const user = useContext(UserContext);
+
+  if (typeof user === 'undefined') {
+    throw new Error('useUser must be used within a UserContext')
+  }
+
+  return user;
 }
 
 export default UserContext;

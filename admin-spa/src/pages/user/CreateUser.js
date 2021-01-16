@@ -1,74 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import PageTitle from '../components/Typography/PageTitle'
+import React from 'react';
+import PageTitle from '../../components/Typography/PageTitle'
 import { FormattedMessage } from 'react-intl'
 
-import {  auth } from '../firebase'
+import { auth } from '../../firebase'
 
-import SectionTitle from '../components/Typography/SectionTitle'
 import {
-  Table,
-  TableHeader,
-  TableCell,
-  TableBody,
-  TableRow,
-  TableFooter,
-  TableContainer,
-  Badge,
-  Avatar,
+  Input,
   Button,
-  Pagination,
 } from '@windmill/react-ui'
-import { EditIcon, TrashIcon } from '../icons'
+import { useForm, Controller } from "react-hook-form";
+import { FormsIcon } from '../../icons'
+import { useNavigate } from "@reach/router"
 
-export default function Users() {
 
-  // setup pages control for every table
-  const [pageTable, setPageTable] = useState(1)
+export default function CreateUser() {
+  const navigate = useNavigate();
+  const { register, handleSubmit, watch, errors, control } = useForm();
 
-  const [totalResults, setTotalResults] = useState(10);
+  const onSubmit = async (data) => {
+    const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
+    console.log(data)
+    await fetch(`http://localhost:3001/users`, {
+      method: 'POST',
+      headers: {
+        "authorization": `Bearer ${idToken}`
+      },
+      body: JSON.stringify(data)
+    })
 
-  // setup data for every table
-  const [dataTable, setDataTable] = useState([]);
-
-  useEffect(
-    async () => {
-      const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-      const response = await fetch("http://localhost:3001/users", {
-        headers: {
-          "authorization": `Bearer ${idToken}`
-        }
-      });
-      const data = await response.json();
-      if(data.status === 'success'){
-        const users = data.json;
-        const mappedUsers = users.map(({disabled, email, emailVerified, metadata, uid}) => ({
-          disabled,
-          email,
-          emailVerified,
-          metadata,
-          uid
-        }));
-
-        setDataTable(mappedUsers);
-        setTotalResults(mappedUsers.length);
-      }
-      console.log(data);
-    },
-    [] 
-  );
-
-  // pagination setup
-  const resultsPerPage = 10
-
-  // pagination change control
-  function onPageChangeTable(p) {
-    setPageTable(p)
+    navigate(`/app/users`);
   }
-  // on page change, load new sliced data
-  // here you would make another server request for new data
-  useEffect(() => {
-    /* setDataTable(response.slice((pageTable - 1) * resultsPerPage, pageTable1 * resultsPerPage)) */
-  }, [pageTable])
 
   return (
     <>
@@ -76,6 +37,91 @@ export default function Users() {
         defaultMessage="Create user"
         description="PageTitle" /></PageTitle>
 
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+          <div className="px-4 py-5 border-b border-gray-200 sm:px-6">
+            <p className="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
+              Create new user
+            </p>
+          </div>
+          <div>
+            <dl>
+              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm leading-5 font-medium text-gray-500">
+                  Email
+        </dt>
+                <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                  <label>
+
+                    <Controller
+                      name="email"
+                      control={control}
+                      defaultValue=""
+                      type="email"
+                      as={Input}
+                    />
+                    {/* errors will return when field validation fails  */}
+                    {errors.email && <span>This field is required</span>}
+                  </label>
+                </dd>
+              </div>
+              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm leading-5 font-medium text-gray-500">
+                  Password
+        </dt>
+                <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                  <label>
+
+                    <Controller
+                      name="password"
+                      control={control}
+                      defaultValue=""
+                      type="password"
+                      as={Input}
+                    />
+                    {/* errors will return when field validation fails  */}
+                    {errors.password && <span>This field is required</span>}
+                  </label>
+                </dd>
+              </div>
+              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm leading-5 font-medium text-gray-500">
+                  Disabled
+        </dt>
+                <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                  <label>
+                    <Controller
+                      name="disabled"
+                      control={control}
+                      as={Input}
+                      type="checkbox"
+                      defaultChecked={false}/>
+                  </label>
+                </dd>
+              </div>
+              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm leading-5 font-medium text-gray-500">
+                  Email verified
+        </dt>
+                <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                  <label>
+                    <Controller
+                      name="emailVerified"
+                      control={control}
+                      as={Input}
+                      type="checkbox"
+                      defaultChecked={true} />
+                  </label>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div className="px-4 py-5 border-b border-gray-200 sm:px-6">
+            <Button type="submit" iconLeft={FormsIcon}>Create</Button>
+          </div>
+        </div>
+
+      </form>
     </>
   )
 }

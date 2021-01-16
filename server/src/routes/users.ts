@@ -5,8 +5,11 @@ const router = new Router({
   prefix: '/users'
 });
 
-router.get('/', UserController.getAllUsers);
-
-router.get('/:id', UserController.getUser);
+router
+  .get('/', UserController.getAllUsers)
+  .post('/', UserController.createUser)
+  .get('/:id', UserController.getUser)
+  .patch('/:id', UserController.updateUser)
+  .delete('/:id', UserController.deleteUser)
 
 export default router;

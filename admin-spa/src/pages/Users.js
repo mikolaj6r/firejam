@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PageTitle from '../components/Typography/PageTitle'
 import { FormattedMessage } from 'react-intl'
 
-import {  auth } from '../firebase'
+import { auth } from '../firebase'
 
 import SectionTitle from '../components/Typography/SectionTitle'
 import {
@@ -14,70 +14,97 @@ import {
   TableFooter,
   TableContainer,
   Badge,
-  Avatar, 
+  Avatar,
   Button,
   Pagination,
 } from '@windmill/react-ui'
 import { EditIcon, TrashIcon } from '../icons'
+import useSWR, { mutate } from 'swr'
+import { useNavigate } from "@reach/router"
+import { PlusCircledIcon } from '@modulz/radix-icons'
+
+const fetcher = async (...args) => {
+  const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
+  const response = await fetch(args[0], {
+    headers: {
+      "authorization": `Bearer ${idToken}`
+    }
+  });
+  const data = await response.json();
+  if (data.status === 'success') {
+    const users = data.json;
+    const mappedUsers = users.map(({ disabled, email, emailVerified, metadata, uid }) => ({
+      disabled,
+      email,
+      emailVerified,
+      metadata,
+      uid
+    }));
+
+    return mappedUsers
+  }
+}
+
 
 export default function Users() {
+  const { data, error } = useSWR('http://localhost:3001/users', fetcher)
 
   // setup pages control for every table
   const [pageTable, setPageTable] = useState(1)
-
-  const [totalResults, setTotalResults] = useState(10);
-
-  // setup data for every table
-  const [dataTable, setDataTable] = useState([]);
-
-  useEffect(
-    async () => {
-      const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-      const response = await fetch("http://localhost:3001/users", {
-        headers: {
-          "authorization": `Bearer ${idToken}`
-        }
-      });
-      const data = await response.json();
-      if(data.status === 'success'){
-        const users = data.json;
-        const mappedUsers = users.map(({disabled, email, emailVerified, metadata, uid}) => ({
-          disabled,
-          email,
-          emailVerified,
-          metadata,
-          uid
-        }));
-
-        setDataTable(mappedUsers);
-        setTotalResults(mappedUsers.length);
-      }
-      console.log(data);
-    },
-    [] 
-  );
+  const navigate = useNavigate();
 
   // pagination setup
   const resultsPerPage = 10
+  const totalResults = data?.length || 10;;
 
   // pagination change control
   function onPageChangeTable(p) {
     setPageTable(p)
   }
+
+  function onEditButtonClick(uid) {
+    navigate(`/app/users/${uid}`);
+  }
+
+  function onCreateButtonClick() {
+    navigate(`/app/users/create`);
+  }
+
+  async function onDeleteButtonClick(uid) {
+    const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
+    
+    await fetch(`http://localhost:3001/users/${uid}`, {
+      method: 'DELETE',
+      headers: {
+        "authorization": `Bearer ${idToken}`
+      }
+    })
+
+    mutate('http://localhost:3001/users')
+  }
+
   // on page change, load new sliced data
   // here you would make another server request for new data
   useEffect(() => {
     /* setDataTable(response.slice((pageTable - 1) * resultsPerPage, pageTable1 * resultsPerPage)) */
   }, [pageTable])
 
+  if (!data) console.log('render with no data')
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+
+  console.log(data)
   return (
     <>
       <PageTitle><FormattedMessage id="app.users.pagetitle"
         defaultMessage="Users"
         description="PageTitle" /></PageTitle>
 
-
-      <SectionTitle>Table</SectionTitle>
+      <div className="container flex items-center justify-between mx-auto my-6 text-purple-600 dark:text-purple-300">
+        <SectionTitle>Table</SectionTitle>
+        <div className="flex-1"></div>
+        <Button iconLeft={PlusCircledIcon} onClick={onCreateButtonClick}>Create</Button>
+      </div>
       <TableContainer className="mb-8">
         <Table>
           <TableHeader>
@@ -89,7 +116,7 @@ export default function Users() {
             </tr>
           </TableHeader>
           <TableBody>
-            {dataTable.map((user, i) => (
+            {data.map((user, i) => (
               <TableRow key={i}>
                 <TableCell>
                   <div className="flex items-center text-sm">
@@ -101,17 +128,17 @@ export default function Users() {
                   </div>
                 </TableCell>
                 <TableCell>
-                  <Badge type={user.disabled ? 'danger':'success'}>{user.disabled ? 'disabled':'enabled'}</Badge>
+                  <Badge type={user.disabled ? 'danger' : 'success'}>{user.disabled ? 'disabled' : 'enabled'}</Badge>
                 </TableCell>
                 <TableCell>
                   <span className="text-sm">{new Date(user.metadata.lastSignInTime).toLocaleDateString()}</span>
                 </TableCell>
                 <TableCell>
                   <div className="flex items-center space-x-4">
-                    <Button layout="link" size="icon" aria-label="Edit">
+                    <Button layout="link" size="icon" aria-label="Edit" onClick={(event => { onEditButtonClick(user.uid) })}>
                       <EditIcon className="w-5 h-5" aria-hidden="true" />
                     </Button>
-                    <Button layout="link" size="icon" aria-label="Delete">
+                    <Button layout="link" size="icon" aria-label="Delete" onClick={(event => { onDeleteButtonClick(user.uid) })}>
                       <TrashIcon className="w-5 h-5" aria-hidden="true" />
                     </Button>
                   </div>
