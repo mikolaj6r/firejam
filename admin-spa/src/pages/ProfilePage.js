@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import UserContext from "../context/UserContext";
 import { Link } from "@reach/router";
 import { auth } from "../firebase";

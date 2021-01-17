@@ -1,23 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PageTitle from '../../components/Typography/PageTitle'
 import { FormattedMessage } from 'react-intl'
 
 import { auth } from '../../firebase'
-import useSWR, { mutate } from 'swr'
+import useSWR from 'swr'
 
 import {
   Input,
-  Badge,
-  Avatar,
   Button,
+  Label,
+  Select
 } from '@windmill/react-ui'
 import { useForm, Controller } from "react-hook-form";
 import { FormsIcon } from '../../icons'
 import { useNavigate } from "@reach/router"
+import availableRoles from '../../data/roles'
 
+const capitalize = (s) => {
+  if (typeof s !== 'string') return ''
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
 
 const fetcher = async (...args) => {
   const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
+  const idTokenResult = await auth().currentUser.getIdTokenResult();
+
   const response = await fetch(args[0], {
     headers: {
       "authorization": `Bearer ${idToken}`
@@ -27,29 +34,30 @@ const fetcher = async (...args) => {
   if (data.status === 'success') {
     const user = data.json;
 
-    return user;
+    return {
+      ...user,
+      role: idTokenResult.claims.role
+    }
   }
 }
 
 
 export default function EditUser({ uid }) {
   const navigate = useNavigate();
-  
-  
-  const { register, handleSubmit, watch, errors, control } = useForm();
+
+
+  const { handleSubmit, errors, control, register } = useForm();
   const onSubmit = async (data) => {
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    const user = await mutate(`http://localhost:3001/users/${uid}`, async user => {
-      const updatedUser = await fetch(`http://localhost:3001/users/${uid}`, {
-        method: 'PATCH',
-        headers: {
-          "authorization": `Bearer ${idToken}`
-        },
-        body: JSON.stringify(data)
-      })
-      // filter the list, and return it with the updated item
-      return updatedUser;
+    await fetch(`http://localhost:3001/users/${uid}`, {
+      method: 'PATCH',
+      headers: {
+        "authorization": `Bearer ${idToken}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
     })
+
     navigate(`/app/users`);
   }
 
@@ -98,14 +106,9 @@ export default function EditUser({ uid }) {
                   Disabled
         </dt>
                 <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                  <label>
-                    <Controller
-                      name="disabled"
-                      control={control}
-                      as={Input}
-                      type="checkbox"
-                      defaultChecked={user.disabled}/>
-                  </label>
+                  <Label check>
+                    <Input name="disabled" type="checkbox" ref={register} defaultChecked={user.disabled} />
+                  </Label>
                 </dd>
               </div>
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -113,14 +116,33 @@ export default function EditUser({ uid }) {
                   Email verified
         </dt>
                 <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                <label>
+                  <label>
                     <Controller
                       name="emailVerified"
                       control={control}
                       as={Input}
                       type="checkbox"
-                      defaultChecked={user.emailVerified}/>
+                      defaultChecked={user.emailVerified} />
                   </label>
+                </dd>
+              </div>
+              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 items-center">
+                <dt className="text-sm leading-5 font-medium text-gray-500">
+                  Role
+        </dt>
+                <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                  <Label>
+                    <Controller
+                      name="role"
+                      control={control}
+                      defaultValue={user.role}
+                      render={({ value, onChange }) => {
+                        return (<Select className="mt-1" value={value} onChange={onChange}>
+                          {availableRoles.map(role => (<option value={role}>{capitalize(role)}</option>))}
+                        </Select>)
+                      }}
+                    />
+                  </Label>
                 </dd>
               </div>
             </dl>

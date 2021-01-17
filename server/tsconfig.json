@@ -10,6 +10,7 @@
     "noImplicitAny": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
+    "resolveJsonModule": true,
   },
   "compileOnSave": true,
   "include": [

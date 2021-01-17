@@ -13,6 +13,8 @@ import Pages from '../pages/Pages';
 import Events from '../pages/Events';
 import LoggedLayout from '../containers/LoggedLayout';
 import Clients from '../pages/Clients';
+import EditClient from '../pages/clients/EditClient';
+import CreateClient from '../pages/clients/CreateClient';
 import Users from '../pages/Users';
 import EditUser from '../pages/user/EditUser';
 import CreateUser from '../pages/user/CreateUser';
@@ -31,6 +33,8 @@ function Application() {
         <Pages path="/app/pages" />
         <Events path="/app/events" />
         <Clients path="/app/clients" />
+        <EditClient path="/app/clients/:uid"/>
+        <CreateClient path="/app/clients/create"/>
         <Dashboard path="/app/dashboard" />
         <Users path="/app/users" />
         <EditUser path="/app/users/:uid"/>

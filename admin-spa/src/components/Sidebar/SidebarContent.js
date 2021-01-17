@@ -3,7 +3,6 @@ import routes from '../../routes/sidebar'
 import { Link } from '@reach/router'
 import * as Icons from '../../icons'
 import SidebarSubmenu from './SidebarSubmenu'
-import { Button } from '@windmill/react-ui'
 
 function Icon({ icon, ...props }) {
   const Icon = Icons[icon]
@@ -26,7 +25,7 @@ const NavLink = props => (
 function SidebarContent() {
   return (
     <div className="py-4 text-gray-500 dark:text-gray-400">
-      <a className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
+      <a className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="/app">
       FIREJAM
       </a>
       <ul className="mt-6">

@@ -32,7 +32,10 @@ export default {
       console.log('No such document!');
       return {};
     } else {
-      return doc;
+      return {
+        id: doc.id,
+        data: doc.data()
+      }
     }
   },
 

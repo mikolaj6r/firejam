@@ -32,3 +32,5 @@ typings/
 
 yarn.lock
 firebase-debug.log
+
+service-account-key.json

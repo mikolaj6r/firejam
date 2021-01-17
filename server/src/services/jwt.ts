@@ -3,6 +3,15 @@
 
 import jwt from 'jsonwebtoken';
 
+import NodeRSA from 'node-rsa';
+
+import serviceAccount from "../service-account-key.json";
+
+import fetch from 'node-fetch';
+
+const publicKey = new NodeRSA().importKey(serviceAccount.private_key, "pkcs8-private-pem").exportKey("pkcs8-public-pem")
+
+
 export default {
   getToken(ctx: any) {
     const params = Object.assign({}, ctx.request.body, ctx.request.query);
@@ -42,18 +51,60 @@ export default {
   },
 
   verify(token: string) {
-    return new Promise(function(resolve, reject) {
-      jwt.verify(
-        token,
-        "sddada", //secret,
-        {},
-        function(err: unknown, tokenPayload = {}) {
-          if (err) {
-            return reject(new Error('Invalid token.'));
+    return new Promise(async function(resolve, reject) {
+      const [ header64, payload64 ] = token.split('.');
+
+      const header = JSON.parse(Buffer.from(header64, 'base64').toString('ascii'));
+      const payload = JSON.parse(Buffer.from(payload64, 'base64').toString('ascii'));
+
+      if(Object.keys(payload).includes('firebase')){
+
+        const publicKeys = await fetch('https://www.googleapis.com/robot/v1/metadata/x509/securetoken@system.gserviceaccount.com').then(res => res.json());
+
+        jwt.verify(
+          token,
+          publicKeys[header.kid],
+          {
+            algorithms: ["RS256"]
+        },
+          function(err: unknown, tokenPayload: any) {
+            if (err) {
+              return reject(new Error('Invalid token.'));
+            }
+            resolve({
+              type: 'user',
+              data: {
+                role: tokenPayload.claims?.role,
+                email: tokenPayload.email,
+                email_verified: tokenPayload.email_verified,
+                id: tokenPayload.user_id
+              }
+            });
           }
-          resolve(tokenPayload);
-        }
-      );
+        );
+
+      }
+      else if(Object.keys(payload.claims).includes('firejam')){
+        jwt.verify(
+          token,
+          publicKey,
+          {
+            algorithms: ["RS256"]
+        },
+          function(err: unknown, tokenPayload: any) {
+            if (err) {
+              return reject(new Error('Invalid token.'));
+            }
+            resolve({
+              type: 'client',
+              data: {
+                role: tokenPayload.claims.role
+              }
+            });
+          }
+        );
+      }
+
     });
   },
 };

@@ -9,8 +9,11 @@ import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 import 'firebase-functions';
 
-admin.initializeApp();
+//import serviceAccount from "./service-account-key.json";
 
+admin.initializeApp({
+    credential: admin.credential.applicationDefault(),
+});
 
 import authRouter from './routes/auth'
 import usersRouter from './routes/users'
@@ -52,7 +55,7 @@ router.get('/', async (ctx) => {
 app.use(authRouter.routes());
 app.use(authRouter.allowedMethods());
 app.use(usersRouter.routes());
-app.use(usersRouter.allowedMethods());
+app.use(usersRouter.allowedMethods()); 
 app.use(clientsRouter.routes());
 app.use(clientsRouter.allowedMethods());
 app.use(router.routes());

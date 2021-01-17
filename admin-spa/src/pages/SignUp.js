@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "@reach/router";
 import {auth, generateUserDocument } from "../firebase";
 

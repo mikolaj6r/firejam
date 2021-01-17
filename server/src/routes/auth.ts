@@ -1,20 +1,11 @@
 import Router from 'koa-router';
-import AuthController, { isAuthenticated, isAuthorized }  from '../controllers/auth'
+import AuthController from '../controllers/auth'
 
 const router = new Router({
-  prefix: '/auth/clients'
+  prefix: '/auth/client'
 });
 
-router
-  .get('/', isAuthenticated,
-    isAuthorized({ hasRole: ['admin'] }), AuthController.find)
-  .post('/', isAuthenticated,
-    isAuthorized({ hasRole: ['admin'] }), AuthController.create)
-  .get('/:id', isAuthenticated,
-    isAuthorized({ hasRole: ['admin'], allowSameUser: true }), AuthController.findOne)
-  .patch('/:id', isAuthenticated,
-    isAuthorized({ hasRole: ['admin'], allowSameUser: true }), AuthController.update)
-  .delete('/:id', isAuthenticated,
-    isAuthorized({ hasRole: ['admin'] }), AuthController.delete)
+router.get('/', () => { })
+  .post('/', AuthController.getToken)
 
 export default router;
