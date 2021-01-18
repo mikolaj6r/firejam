@@ -5,8 +5,7 @@ import { auth, generateUserDocument } from "../firebase";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [displayName, setDisplayName] = useState("");
 
   const [error, setError] = useState(null);
 
@@ -21,15 +20,14 @@ const SignUp = () => {
         email,
         password
       );
-      generateUserDocument(user, { firstName, lastName });
+      generateUserDocument(user, { displayName });
     } catch (error) {
       setError("Error Signing up with email and password");
     }
 
     setEmail("");
     setPassword("");
-    setFirstName("");
-    setLastName("");
+    setDisplayName("");
   };
   const onChangeHandler = (event) => {
     const { name, value } = event.currentTarget;
@@ -37,10 +35,8 @@ const SignUp = () => {
       setEmail(value);
     } else if (name === "password") {
       setPassword(value);
-    } else if (name === "firstName") {
-      setFirstName(value);
-    } else if (name === "lastName") {
-      setLastName(value);
+    } else if (name === "displayName") {
+      setDisplayName(value);
     }
   };
   return (
@@ -281,10 +277,10 @@ const SignUp = () => {
                 <div className="flex -mx-3">
                   <div className="w-1/2 px-3 mb-5">
                     <label
-                      htmlFor="firstName"
+                      htmlFor="displayName"
                       className="text-xs font-semibold px-1"
                     >
-                      First name
+                      Display name
                     </label>
                     <div className="flex">
                       <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
@@ -292,31 +288,10 @@ const SignUp = () => {
                       </div>
                       <input
                         type="text"
-                        name="firstName"
+                        name="displayName"
                         className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                        placeholder="John"
-                        value={firstName}
-                        onChange={(event) => onChangeHandler(event)}
-                      />
-                    </div>
-                  </div>
-                  <div className="w-1/2 px-3 mb-5">
-                    <label
-                      for="lastName"
-                      className="text-xs font-semibold px-1"
-                    >
-                      Last name
-                    </label>
-                    <div className="flex">
-                      <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
-                        <i className="mdi mdi-account-outline text-gray-400 text-lg"></i>
-                      </div>
-                      <input
-                        type="text"
-                        name="lastName"
-                        className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                        placeholder="Smith"
-                        value={lastName}
+                        placeholder="John Smith"
+                        value={displayName}
                         onChange={(event) => onChangeHandler(event)}
                       />
                     </div>

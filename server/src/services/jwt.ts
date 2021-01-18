@@ -54,8 +54,8 @@ export default {
     return new Promise(async function(resolve, reject) {
       const [ header64, payload64 ] = token.split('.');
 
-      const header = JSON.parse(Buffer.from(header64, 'base64').toString('ascii'));
-      const payload = JSON.parse(Buffer.from(payload64, 'base64').toString('ascii'));
+      const header = JSON.parse(Buffer.from(header64, 'base64').toString('utf8'));
+      const payload = JSON.parse(Buffer.from(payload64, 'base64').toString('utf8'));
 
       if(Object.keys(payload).includes('firebase')){
 

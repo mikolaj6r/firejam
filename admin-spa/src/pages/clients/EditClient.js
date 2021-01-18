@@ -71,6 +71,7 @@ export default function EditClient({ uid }) {
       body: JSON.stringify(data),
     });
 
+    mutate(`http://localhost:3001/clients/${uid}`);
     navigate(`/app/clients`);
   };
 

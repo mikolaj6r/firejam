@@ -3,7 +3,7 @@ import PageTitle from "../../components/Typography/PageTitle";
 import { FormattedMessage } from "react-intl";
 
 import { auth } from "../../firebase";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 
 import { Input, Button, Label, Select } from "@windmill/react-ui";
 import { useForm, Controller } from "react-hook-form";
@@ -50,6 +50,7 @@ export default function EditUser({ uid }) {
       body: JSON.stringify(data),
     });
 
+    mutate(`http://localhost:3001/users/${uid}`);
     navigate(`/app/users`);
   };
 
@@ -80,6 +81,22 @@ export default function EditUser({ uid }) {
           </div>
           <div>
             <dl>
+              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm leading-5 font-medium text-gray-500">
+                  Display Name
+                </dt>
+                <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                  <Label>
+                    <Input
+                      name="displayName"
+                      defaultValue={user.displayName}
+                      type="text"
+                      ref={register}
+                    />
+                    {errors.displayName && <span>This field is required</span>}
+                  </Label>
+                </dd>
+              </div>
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm leading-5 font-medium text-gray-500">
                   Email
