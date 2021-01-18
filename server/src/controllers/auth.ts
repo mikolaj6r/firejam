@@ -31,8 +31,6 @@ export async function isAuthenticated(ctx: Koa.Context, next: () => Promise<any>
 
       let decodedToken = await jwtServices.verify(token[1]);
 
-      console.log(decodedToken)
-
       ctx.state.requester = decodedToken;
       await next();
     } catch (err) {

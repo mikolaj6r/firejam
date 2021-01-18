@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react'
-import SidebarContext from '../context/SidebarContext'
-import UserContext from '../context/UserContext'
+import React, { useContext, useState } from "react";
+import SidebarContext from "../context/SidebarContext";
+import UserContext, { useUser } from "../context/UserContext";
 import { Link } from "@reach/router";
-
+import { auth } from "../firebase";
 
 import {
   MoonIcon,
@@ -12,24 +12,30 @@ import {
   OutlinePersonIcon,
   OutlineCogIcon,
   OutlineLogoutIcon,
-} from '../icons'
-import { Avatar, Badge, Dropdown, DropdownItem, WindmillContext } from '@windmill/react-ui'
+} from "../icons";
+import {
+  Avatar,
+  Badge,
+  Dropdown,
+  DropdownItem,
+  WindmillContext,
+} from "@windmill/react-ui";
 
 function Header() {
-  const { mode, toggleMode } = useContext(WindmillContext)
-  const { toggleSidebar } = useContext(SidebarContext)
+  const { mode, toggleMode } = useContext(WindmillContext);
+  const { toggleSidebar } = useContext(SidebarContext);
 
-  const { photoURL, displayName, email } = useContext(UserContext);
+  const { photoURL, firstName, lastName, email } = useUser();
 
-  const [isNotificationsMenuOpen, setIsNotificationsMenuOpen] = useState(false)
-  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
+  const [isNotificationsMenuOpen, setIsNotificationsMenuOpen] = useState(false);
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
 
   function handleNotificationsClick() {
-    setIsNotificationsMenuOpen(!isNotificationsMenuOpen)
+    setIsNotificationsMenuOpen(!isNotificationsMenuOpen);
   }
 
   function handleProfileClick() {
-    setIsProfileMenuOpen(!isProfileMenuOpen)
+    setIsProfileMenuOpen(!isProfileMenuOpen);
   }
 
   return (
@@ -52,11 +58,11 @@ function Header() {
               onClick={toggleMode}
               aria-label="Toggle color mode"
             >
-              {mode === 'dark' ? (
+              {mode === "dark" ? (
                 <SunIcon className="w-5 h-5" aria-hidden="true" />
               ) : (
-                  <MoonIcon className="w-5 h-5" aria-hidden="true" />
-                )}
+                <MoonIcon className="w-5 h-5" aria-hidden="true" />
+              )}
             </button>
           </li>
           {/* <!-- Notifications menu --> */}
@@ -84,13 +90,6 @@ function Header() {
                 <span>Messages</span>
                 <Badge type="danger">13</Badge>
               </DropdownItem>
-              <DropdownItem tag="a" href="#" className="justify-between">
-                <span>Sales</span>
-                <Badge type="danger">2</Badge>
-              </DropdownItem>
-              <DropdownItem onClick={() => alert('Alerts!')}>
-                <span>Alerts</span>
-              </DropdownItem>
             </Dropdown>
           </li>
           {/* <!-- Profile menu --> */}
@@ -103,7 +102,10 @@ function Header() {
             >
               <Avatar
                 className="align-middle"
-                src={photoURL || "https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"}
+                src={
+                  photoURL ||
+                  "https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
+                }
                 alt=""
                 aria-hidden="true"
               />
@@ -113,17 +115,27 @@ function Header() {
               isOpen={isProfileMenuOpen}
               onClose={() => setIsProfileMenuOpen(false)}
             >
-              <DropdownItem tag={Link}  to="/app/me">
-                <OutlinePersonIcon className="w-4 h-4 mr-3" aria-hidden="true" />
-                
+              <DropdownItem tag={Link} to="/app/me">
+                <OutlinePersonIcon
+                  className="w-4 h-4 mr-3"
+                  aria-hidden="true"
+                />
+
                 <span>Profile</span>
               </DropdownItem>
               <DropdownItem tag="a" href="#">
                 <OutlineCogIcon className="w-4 h-4 mr-3" aria-hidden="true" />
                 <span>Settings</span>
               </DropdownItem>
-              <DropdownItem onClick={() => alert('Log out!')}>
-                <OutlineLogoutIcon className="w-4 h-4 mr-3" aria-hidden="true" />
+              <DropdownItem
+                onClick={() => {
+                  auth.signOut();
+                }}
+              >
+                <OutlineLogoutIcon
+                  className="w-4 h-4 mr-3"
+                  aria-hidden="true"
+                />
                 <span>Log out</span>
               </DropdownItem>
             </Dropdown>
@@ -131,7 +143,7 @@ function Header() {
         </ul>
       </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

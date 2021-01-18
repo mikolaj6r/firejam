@@ -2,42 +2,67 @@ import React, { useContext } from "react";
 import UserContext from "../context/UserContext";
 import { Link } from "@reach/router";
 import { auth } from "../firebase";
-import PageTitle from '../components/Typography/PageTitle'
-import { FormattedMessage } from 'react-intl'
+import PageTitle from "../components/Typography/PageTitle";
+import { FormattedMessage } from "react-intl";
+
+import { Badge, Avatar, Button } from "@windmill/react-ui";
 
 const ProfilePage = () => {
   const user = useContext(UserContext);
-  const { photoURL, displayName, email } = user;
+  const { photoURL, firstName = "", lastName = "", email } = user;
 
   return (
     <>
-      <PageTitle><FormattedMessage id="app.profilepage.pagetitle"
-    defaultMessage="Profile Page"
-    description="PageTitle"/></PageTitle>
+      <PageTitle>
+        <FormattedMessage
+          id="app.profilepage.pagetitle"
+          defaultMessage="Profile Page"
+          description="PageTitle"
+        />
+      </PageTitle>
+      <div class="container mx-auto mt-36">
+        <div>
+          <div class="bg-white relative shadow-xl w-5/6 md:w-4/6  lg:w-3/6 xl:w-2/6 mx-auto shadow-xl rounded-lg py-3">
+            <div class="flex justify-center">
+              <img
+                src={
+                  photoURL ||
+                  "https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png"
+                }
+                alt="profile picture"
+                class="rounded-full mx-auto absolute -top-20 w-32 h-32 shadow-2xl border-4 border-white"
+              />
+            </div>
 
-      <div className="mx-auto w-11/12 md:w-2/4 py-8 px-4 md:px-8">
-        <div className="flex border flex-col items-center md:flex-row md:items-start border-blue-400 px-3 py-4">
-          <div
-            style={{
-              background: `url(${photoURL || 'https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png'})  no-repeat center center`,
-              backgroundSize: "cover",
-              height: "200px",
-              width: "200px"
-            }}
-            className="border border-blue-300"
-          ></div>
-          <div className="md:pl-4">
-            <h2 className="text-2xl font-semibold">{displayName}</h2>
-            <h3 className="italic">{email}</h3>
+            <div class="mt-16">
+              <h1 class="font-bold text-center text-3xl text-gray-900">
+                {firstName || "Mikołaj"} {lastName || "Romanowski"}
+              </h1>
+              <p class="text-center text-sm text-gray-400 font-medium mt-2">
+                {email}
+              </p>
+              <div class="text-center my-8 justify-between flex justify-around  px-6">
+                <Button layout="outline">
+                  <Link
+                    to="/app/passwordChange"
+                    className="text-indigo-500 hover:text-indigo-600"
+                  >
+                    Change password
+                  </Link>
+                </Button>
+                <Button
+                  onClick={() => {
+                    auth.signOut();
+                  }}
+                >
+                  Sign out
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
-        <Link to="/passwordChange" className="w-full block text-center mt-4 bg-blue-400 text-white py-3">
-          Change password
-      </Link>{" "}
-        <button className="w-full py-3 bg-red-600 mt-4 text-white" onClick={() => { auth.signOut() }}>Sign out</button>
       </div>
     </>
-
-  )
+  );
 };
 export default ProfilePage;

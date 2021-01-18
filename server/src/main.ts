@@ -18,6 +18,10 @@ admin.initializeApp({
 import authRouter from './routes/auth'
 import usersRouter from './routes/users'
 import clientsRouter from './routes/clients'
+import pagesRouter from './routes/page'
+import eventsRouter from './routes/event'
+import postsRouter from './routes/post'
+
 
 
 const PORT = Number(process.env.PORT) || 3001;
@@ -58,6 +62,12 @@ app.use(usersRouter.routes());
 app.use(usersRouter.allowedMethods()); 
 app.use(clientsRouter.routes());
 app.use(clientsRouter.allowedMethods());
+app.use(pagesRouter.routes());
+app.use(pagesRouter.allowedMethods());
+app.use(eventsRouter.routes());
+app.use(eventsRouter.allowedMethods());
+app.use(postsRouter.routes());
+app.use(postsRouter.allowedMethods());
 app.use(router.routes());
 
 app.listen(PORT);

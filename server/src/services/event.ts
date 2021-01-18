@@ -1,6 +1,6 @@
 import * as admin from 'firebase-admin';
 
-const DB_COLLECTION_KEY = 'clients';
+const DB_COLLECTION_KEY = 'events';
 const db = admin.firestore();
 
 export default {
