@@ -107,8 +107,8 @@ export default function Posts() {
           <TableHeader>
             <tr>
               <TableCell>Id</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell>Token</TableCell>
+              <TableCell>Title</TableCell>
+              <TableCell>Author</TableCell>
               <TableCell>Date</TableCell>
               <TableCell>Actions</TableCell>
             </tr>
@@ -124,18 +124,14 @@ export default function Posts() {
                   </div>
                 </TableCell>
                 <TableCell>
-                  <Badge type={data.disabled ? "danger" : "success"}>
-                    {data.disabled ? "disabled" : "enabled"}
-                  </Badge>
+                  <p className="font-semibold">{data.title}</p>
                 </TableCell>
                 <TableCell>
-                  <p className="font-semibold">{data.token}</p>
+                  <p className="font-semibold">{data.user.displayName}</p>
                 </TableCell>
                 <TableCell>
                   <span className="text-sm">
-                    {new Date(
-                      data.metadata?.lastSignInTime
-                    ).toLocaleDateString()}
+                    {new Date(data.date).toLocaleDateString()}
                   </span>
                 </TableCell>
                 <TableCell>

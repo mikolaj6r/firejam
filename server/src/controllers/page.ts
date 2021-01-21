@@ -34,8 +34,9 @@ export default {
   },
   async create(ctx: any) {
     const pageData = ctx.request.body;
+    const { id: userId } = ctx.state.requester.data;
 
-    const page = await pageServices.create(pageData);
+    const page = await pageServices.create(pageData, userId);
     
     return ctx.body = {
       status: 'success',

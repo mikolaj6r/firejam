@@ -10,18 +10,36 @@ import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import availableRoles from "../../data/roles";
 
+// Require Editor JS files.
+import "froala-editor/js/froala_editor.pkgd.min.js";
+
+// Require Editor CSS files.
+import "froala-editor/css/froala_style.min.css";
+import "froala-editor/css/froala_editor.pkgd.min.css";
+import "froala-editor/css/themes/dark.min.css";
+
+// Require Font Awesome.
+import "font-awesome/css/font-awesome.css";
+
+import FroalaEditor from "react-froala-wysiwyg";
+// import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
+// import FroalaEditorA from 'react-froala-wysiwyg/FroalaEditorA';
+// import FroalaEditorButton from 'react-froala-wysiwyg/FroalaEditorButton';
+// import FroalaEditorImg from 'react-froala-wysiwyg/FroalaEditorImg';
+// import FroalaEditorInput from 'react-froala-wysiwyg/FroalaEditorInput';
+
 const capitalize = (s) => {
   if (typeof s !== "string") return "";
   return s.charAt(0).toUpperCase() + s.slice(1);
 };
 
-export default function CreateUser() {
+export default function CreatePage() {
   const navigate = useNavigate();
   const { handleSubmit, errors, control, register } = useForm();
 
   const onSubmit = async (data) => {
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    await fetch(`http://localhost:3001/users`, {
+    await fetch(`http://localhost:3001/pages`, {
       method: "POST",
       headers: {
         authorization: `Bearer ${idToken}`,
@@ -30,15 +48,15 @@ export default function CreateUser() {
       body: JSON.stringify(data),
     });
 
-    navigate(`/app/users`);
+    navigate(`/app/pages`);
   };
 
   return (
     <>
       <PageTitle>
         <FormattedMessage
-          id="app.users.pagetitle"
-          defaultMessage="Create user"
+          id="app.pages.pagetitle"
+          defaultMessage="Create page"
           description="PageTitle"
         />
       </PageTitle>
@@ -47,92 +65,44 @@ export default function CreateUser() {
         <div className="bg-white shadow overflow-hidden sm:rounded-lg">
           <div className="px-4 py-5 border-b border-gray-200 sm:px-6">
             <p className="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
-              Create new user
+              Create new page
             </p>
           </div>
           <div>
             <dl>
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm leading-5 font-medium text-gray-500">
-                  Email
+                  Title
                 </dt>
                 <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                   <Label>
                     <Input
-                      name="email"
+                      name="title"
                       defaultValue=""
-                      type="email"
+                      type="text"
                       ref={register}
                     />
-                    {errors.email && <span>This field is required</span>}
+                    {errors.title && <span>This field is required</span>}
                   </Label>
                 </dd>
               </div>
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm leading-5 font-medium text-gray-500">
-                  Password
+                  Content
                 </dt>
                 <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                  <Label>
-                    <Input
-                      name="password"
-                      defaultValue=""
-                      type="password"
-                      ref={register}
-                    />
-                    {errors.password && <span>This field is required</span>}
-                  </Label>
-                </dd>
-              </div>
-              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm leading-5 font-medium text-gray-500">
-                  Disabled
-                </dt>
-                <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                  <Label check>
-                    <Input
-                      name="disabled"
-                      type="checkbox"
-                      ref={register}
-                      defaultChecked={false}
-                    />
-                  </Label>
-                </dd>
-              </div>
-              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm leading-5 font-medium text-gray-500">
-                  Email verified
-                </dt>
-                <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                  <Label check>
-                    <Input
-                      name="emailVerified"
-                      type="checkbox"
-                      ref={register}
-                      defaultChecked={true}
-                    />
-                  </Label>
-                </dd>
-              </div>
-              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 items-center">
-                <dt className="text-sm leading-5 font-medium text-gray-500">
-                  Role
-                </dt>
-                <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                  <Label>
-                    <Select
-                      name="role"
-                      className="mt-1"
-                      defaultValue={"teacher"}
-                      ref={register}
-                    >
-                      {availableRoles.map((role) => (
-                        <option value={role} key={role}>
-                          {capitalize(role)}
-                        </option>
-                      ))}
-                    </Select>
-                  </Label>
+                  <Controller
+                    name="content"
+                    control={control}
+                    render={(props) => (
+                      <FroalaEditor
+                        tag="textarea"
+                        config={{ theme: "dark" }}
+                        model={props.value}
+                        onModelChange={props.onChange}
+                      />
+                    )}
+                  />
                 </dd>
               </div>
             </dl>

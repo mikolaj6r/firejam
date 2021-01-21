@@ -3,13 +3,14 @@ import PageTitle from "../../components/Typography/PageTitle";
 import { FormattedMessage } from "react-intl";
 
 import { auth } from "../../firebase";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 
 import { Input, Button, Label, Select } from "@windmill/react-ui";
 import { useForm, Controller } from "react-hook-form";
 import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import availableRoles from "../../data/roles";
+import DateTimePicker from "react-datetime-picker";
 
 const capitalize = (s) => {
   if (typeof s !== "string") return "";
@@ -27,21 +28,21 @@ const fetcher = async (...args) => {
   });
   const data = await response.json();
   if (data.status === "success") {
-    const user = data.json;
+    const event = data.json;
 
     return {
-      ...user,
+      ...event,
     };
   }
 };
 
-export default function EditUser({ uid }) {
+export default function EditEvent({ uid }) {
   const navigate = useNavigate();
 
   const { handleSubmit, errors, control, register } = useForm();
   const onSubmit = async (data) => {
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    await fetch(`http://localhost:3001/users/${uid}`, {
+    await fetch(`http://localhost:3001/events/${uid}`, {
       method: "PATCH",
       headers: {
         authorization: `Bearer ${idToken}`,
@@ -50,23 +51,26 @@ export default function EditUser({ uid }) {
       body: JSON.stringify(data),
     });
 
-    navigate(`/app/users`);
+    mutate(`http://localhost:3001/events/${uid}`);
+    navigate(`/app/events`);
   };
 
-  const { data: user, error } = useSWR(
-    `http://localhost:3001/users/${uid}`,
+  const { data, error } = useSWR(
+    `http://localhost:3001/events/${uid}`,
     fetcher
   );
 
   if (error) return <div>failed to load: {error}</div>;
-  if (!user) return <div>loading...</div>;
+  if (!data) return <div>loading...</div>;
+
+  const { data: event } = data;
 
   return (
     <>
       <PageTitle>
         <FormattedMessage
-          id="app.users.pagetitle"
-          defaultMessage="Edit user"
+          id="app.events.pagetitle"
+          defaultMessage="Edit event"
           description="PageTitle"
         />
       </PageTitle>
@@ -75,75 +79,63 @@ export default function EditUser({ uid }) {
         <div className="bg-white shadow overflow-hidden sm:rounded-lg">
           <div className="px-4 py-5 border-b border-gray-200 sm:px-6">
             <p className="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
-              Edit user details
+              Edit event details
             </p>
           </div>
           <div>
             <dl>
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm leading-5 font-medium text-gray-500">
-                  Email
+                  Title
                 </dt>
                 <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                   <Label>
                     <Input
-                      name="email"
-                      defaultValue={user.email}
-                      type="email"
+                      name="title"
+                      defaultValue={event.title}
+                      type="text"
                       ref={register}
                     />
-                    {errors.email && <span>This field is required</span>}
+                    {errors.title && <span>This field is required</span>}
                   </Label>
                 </dd>
               </div>
               <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm leading-5 font-medium text-gray-500">
-                  Disabled
+                <dt className="text-smpost leading-5 font-medium text-gray-500">
+                  Description
                 </dt>
                 <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                  <Label check>
+                  <Label>
                     <Input
-                      name="disabled"
-                      type="checkbox"
+                      name="description"
+                      defaultValue={event.description}
+                      type="text"
                       ref={register}
-                      defaultChecked={user.disabled}
                     />
+                    {errors.description && <span>This field is required</span>}
                   </Label>
                 </dd>
               </div>
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm leading-5 font-medium text-gray-500">
-                  Email verified
+                  Date
                 </dt>
                 <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                   <Label>
-                    <Input
-                      name="emailVerified"
-                      type="checkbox"
-                      ref={register}
-                      defaultChecked={user.emailVerified}
-                    />
-                  </Label>
-                </dd>
-              </div>
-              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 items-center">
-                <dt className="text-sm leading-5 font-medium text-gray-500">
-                  Role
-                </dt>
-                <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                  <Label>
-                    <Select
-                      name="role"
-                      className="mt-1"
-                      defaultValue={user.role}
-                      ref={register}
-                    >
-                      {availableRoles.map((role) => (
-                        <option value={role} key={role}>
-                          {capitalize(role)}
-                        </option>
-                      ))}
-                    </Select>
+                    <Controller
+                      name="date"
+                      control={control}
+                      defaultValue={new Date(event.date)}
+                      render={(props) => {
+                        return (
+                          <DateTimePicker
+                            value={props.value}
+                            onChange={props.onChange}
+                          />
+                        );
+                      }}
+                    ></Controller>
+                    {errors.date && <span>This field is required</span>}
                   </Label>
                 </dd>
               </div>

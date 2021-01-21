@@ -1,22 +1,41 @@
 import * as admin from 'firebase-admin';
+import { PostRecord } from '../types/post'
+import { FirebaseDoc } from '../types/firebase'
 
+import userServices from '../services/user'
 const DB_COLLECTION_KEY = 'posts';
 const db = admin.firestore();
 
+type Resource = FirebaseDoc<PostRecord>;
+
+
 export default {
-  async find() {
+  async find(): Promise<Resource[]> {
     try {
       const snapshot = await db.collection(DB_COLLECTION_KEY).get();
-      let resources: any[] = [];
+      let resources: Resource[] = [];
 
-      snapshot.forEach(doc => {
+      snapshot.forEach(async doc => {
         resources.push({
           id: doc.id,
-          data: doc.data()
+          data: (doc.data() as PostRecord)
         })
       });
 
-      return resources;
+
+      const promises = resources.map(async resource => {
+        const user = await userServices.findOne(resource.data.userId);
+        return {
+          ...resource,
+          data: {
+            ...resource.data,
+            user
+          }
+        }
+      })
+
+      const resourcesWithUser = await Promise.all(promises)
+      return resourcesWithUser;
     }
     catch (error) {
       console.log('Error getting data from db', error);
@@ -24,17 +43,17 @@ export default {
     };
   },
 
-  async findOne(uid: string) {
+  async findOne(uid: string): Promise<Resource | null> {
     const ref = db.collection(DB_COLLECTION_KEY).doc(uid);
     const doc = await ref.get();
 
     if (!doc.exists) {
       console.log('No such document!');
-      return {};
+      return null;
     } else {
       return {
         id: doc.id,
-        data: doc.data()
+        data: (doc.data() as PostRecord)
       }
     }
   },
@@ -46,8 +65,14 @@ export default {
     return res;
   },
 
-  async create(data: any) {
-    await db.collection(DB_COLLECTION_KEY).add(data);
+  async create(data: any, userId: string) {
+    const date = new Date().toISOString();
+    
+    await db.collection(DB_COLLECTION_KEY).add({
+      ...data,
+      userId,
+      date
+    });
 
     return true;
   },

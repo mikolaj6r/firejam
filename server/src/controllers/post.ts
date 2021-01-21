@@ -34,7 +34,9 @@ export default {
   async create(ctx: any) {
     const postData = ctx.request.body;
 
-    const post = await postServices.create(postData);
+    const { id: userId } = ctx.state.requester.data;
+
+    const post = await postServices.create(postData, userId);
     
     return ctx.body = {
       status: 'success',

@@ -33,8 +33,9 @@ export default {
   },
   async create(ctx: any) {
     const eventData = ctx.request.body;
+    const { id: userId } = ctx.state.requester.data;
 
-    const event = await eventServices.create(eventData);
+    const event = await eventServices.create(eventData, userId);
     
     return ctx.body = {
       status: 'success',
