@@ -142,9 +142,6 @@ export default function Messages() {
           <TableBody>
             {data.map(
               ({ id, sender, message, date, receiver, targetGroup }, i) => {
-                console.log(users);
-                console.log(sender);
-                console.log(users.find((user) => user.id == sender));
                 return (
                   <TableRow key={i}>
                     <TableCell>
@@ -164,7 +161,9 @@ export default function Messages() {
                       </span>
                     </TableCell>
                     <TableCell>
-                      <span className="text-sm">{message}</span>
+                      <span className="text-sm">
+                        {message.substring(0, 16)}...
+                      </span>
                     </TableCell>
                     <TableCell>
                       <span className="text-sm">

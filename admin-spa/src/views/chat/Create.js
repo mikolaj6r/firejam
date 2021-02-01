@@ -52,7 +52,7 @@ export default function CreateMessage() {
             sender: currentUserId,
             receiver: data.target,
             message: data.message,
-            date: new Date().toISOString(),
+            date: Date.now(),
           })
           .then(function (docRef) {
             console.log("Document written with ID: ", docRef.id);
@@ -67,7 +67,7 @@ export default function CreateMessage() {
             sender: currentUserId,
             message: data.message,
             targetGroup: data.target,
-            date: new Date().toISOString(),
+            date: Date.now(),
           })
           .then(function (docRef) {
             console.log("Document written with ID: ", docRef.id);
