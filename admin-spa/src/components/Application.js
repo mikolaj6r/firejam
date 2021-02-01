@@ -24,6 +24,8 @@ import EditPost from "../views/post/Edit";
 import CreatePost from "../views/post/Create";
 import EditEvent from "../views/event/Edit";
 import CreateEvent from "../views/event/Create";
+import CreateMessage from "../views/chat/Create";
+
 function Application() {
   const user = useContext(UserContext);
 
@@ -33,6 +35,7 @@ function Application() {
         <ProfilePage path="/app/me" />
         <PasswordChange path="/app/passwordChange" />
         <Messages path="/app/messages" />
+        <CreateMessage path="/app/messages/create" />
         <Posts path="/app/posts" />
         <EditPost path="/app/posts/:uid" />
         <CreatePost path="/app/posts/create" />
