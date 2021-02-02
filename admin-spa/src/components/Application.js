@@ -26,6 +26,7 @@ import EditEvent from "../views/event/Edit";
 import CreateEvent from "../views/event/Create";
 import CreateMessage from "../views/chat/Create";
 import ViewMessage from "../views/chat/View";
+import Media from "../views/Media";
 
 function Application() {
   const user = useContext(UserContext);
@@ -54,6 +55,7 @@ function Application() {
         <Users path="/app/users" />
         <EditUser path="/app/users/:uid" />
         <CreateUser path="/app/users/create" />
+        <Media path="/app/media" />
         <Redirect from="*" to="/app/dashboard" noThrow />
       </Router>
     </LoggedLayout>

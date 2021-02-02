@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PageTitle from "../../components/Typography/PageTitle";
 import { FormattedMessage } from "react-intl";
 
@@ -10,23 +10,11 @@ import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import availableRoles from "../../data/roles";
 
-// Require Editor JS files.
-import "froala-editor/js/froala_editor.pkgd.min.js";
-
-// Require Editor CSS files.
-import "froala-editor/css/froala_style.min.css";
-import "froala-editor/css/froala_editor.pkgd.min.css";
-import "froala-editor/css/themes/dark.min.css";
+import Editor from "../../components/Editor/Editor";
+import { EditorState } from "draft-js";
 
 // Require Font Awesome.
 import "font-awesome/css/font-awesome.css";
-
-import FroalaEditor from "react-froala-wysiwyg";
-// import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
-// import FroalaEditorA from 'react-froala-wysiwyg/FroalaEditorA';
-// import FroalaEditorButton from 'react-froala-wysiwyg/FroalaEditorButton';
-// import FroalaEditorImg from 'react-froala-wysiwyg/FroalaEditorImg';
-// import FroalaEditorInput from 'react-froala-wysiwyg/FroalaEditorInput';
 
 const capitalize = (s) => {
   if (typeof s !== "string") return "";
@@ -86,7 +74,7 @@ export default function CreatePost() {
                   </Label>
                 </dd>
               </div>
-              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <div className="bg-gray-50 px-4 py-5 pb-20 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm leading-5 font-medium text-gray-500">
                   Content
                 </dt>
@@ -94,12 +82,11 @@ export default function CreatePost() {
                   <Controller
                     name="content"
                     control={control}
+                    defaultValue={EditorState.createEmpty()}
                     render={(props) => (
-                      <FroalaEditor
-                        tag="textarea"
-                        config={{ theme: "dark" }}
-                        model={props.value}
-                        onModelChange={props.onChange}
+                      <Editor
+                        editorState={props.value}
+                        onEditorStateChange={props.onChange}
                       />
                     )}
                   />
