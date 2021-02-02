@@ -55,8 +55,13 @@ export default function CreateMessage() {
             date: Date.now(),
           })
           .then(function (docRef) {
-            console.log("Document written with ID: ", docRef.id);
-            navigate(`/app/messages`);
+            firestore
+              .collection("messageHistory")
+              .doc(docRef.id)
+              .set({
+                type: "individual",
+              })
+              .then(() => navigate(`/app/messages`));
           });
 
         break;
@@ -70,8 +75,13 @@ export default function CreateMessage() {
             date: Date.now(),
           })
           .then(function (docRef) {
-            console.log("Document written with ID: ", docRef.id);
-            navigate(`/app/messages`);
+            firestore
+              .collection("messageHistory")
+              .doc(docRef.id)
+              .set({
+                type: "group",
+              })
+              .then(() => navigate(`/app/messages`));
           });
 
         break;
