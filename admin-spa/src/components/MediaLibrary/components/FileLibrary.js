@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import FileLibraryCard from "./FileLibraryCard";
-import FileLibraryPager from "./FileLibraryPager";
 
-import { Button } from "@windmill/react-ui";
+import { Button, Pagination } from "@windmill/react-ui";
 
 const FileLibrary = (props) => {
   const [selectedItem, setSelectedItem] = useState(undefined);
@@ -45,7 +44,7 @@ const FileLibrary = (props) => {
       .slice(arrayStart, arrayEnd)
       .map((element, index) => {
         return (
-          <React.Fragment key={index}>
+          <React.Fragment key={element.fileName}>
             {React.createElement(props.libraryCardComponent, {
               selectedItem,
               ...element,
@@ -61,11 +60,11 @@ const FileLibrary = (props) => {
   }
 
   const submitRow = selectedItem && (
-    <div className="flex flex-row my-8">
+    <div className="flex flex-row mt-4 mb-2">
       <div className="text-right flex-initial">
         {props.fileDeleteCallback !== undefined && (
           <Button
-            variant="danger"
+            layout="outline"
             onClick={() => {
               if (props.fileDeleteCallback)
                 props.fileDeleteCallback(selectedItem);
@@ -75,9 +74,19 @@ const FileLibrary = (props) => {
             Delete
           </Button>
         )}
+        {!props.isModal && (
+          <Button
+            layout="primary"
+            onClick={() =>
+              navigator.clipboard.writeText(selectedItem.thumbnailUrl)
+            }
+          >
+            Copy link
+          </Button>
+        )}
         {props.isModal !== undefined && (
           <Button
-            variant="primary"
+            layout="primary"
             onClick={() => props.fileSelectCallback(selectedItem)}
           >
             Select File
@@ -90,11 +99,11 @@ const FileLibrary = (props) => {
   const pagerRow = props.fileLibraryList.length > itemsPerPage && (
     <div className="flex flex-row">
       <div className="d-flex justify-center flex-initial">
-        <FileLibraryPager
-          count={props.fileLibraryList.length}
-          page={page}
-          pagerCallback={(number) => setPage(number)}
-          itemsPerPage={itemsPerPage}
+        <Pagination
+          totalResults={props.fileLibraryList.length}
+          resultsPerPage={itemsPerPage}
+          onChange={(number) => setPage(number)}
+          label="Page navigation"
         />
       </div>
     </div>

@@ -10,11 +10,10 @@ import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import availableRoles from "../../data/roles";
 
-import Editor from "../../components/Editor/Editor";
-import { EditorState } from "draft-js";
-
-// Require Font Awesome.
-import "font-awesome/css/font-awesome.css";
+import Editor, {
+  convertToRaw,
+  EditorState,
+} from "../../components/Editor/Editor";
 
 const capitalize = (s) => {
   if (typeof s !== "string") return "";
@@ -26,6 +25,10 @@ export default function CreatePost() {
   const { handleSubmit, errors, control, register } = useForm();
 
   const onSubmit = async (data) => {
+    const { content } = data;
+
+    const rawContent = convertToRaw(content.getCurrentContent());
+
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
     await fetch(`http://localhost:3001/posts`, {
       method: "POST",
@@ -33,7 +36,10 @@ export default function CreatePost() {
         authorization: `Bearer ${idToken}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        ...data,
+        content: rawContent,
+      }),
     });
 
     navigate(`/app/posts`);

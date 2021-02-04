@@ -10,23 +10,10 @@ import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import availableRoles from "../../data/roles";
 
-// Require Editor JS files.
-import "froala-editor/js/froala_editor.pkgd.min.js";
-
-// Require Editor CSS files.
-import "froala-editor/css/froala_style.min.css";
-import "froala-editor/css/froala_editor.pkgd.min.css";
-import "froala-editor/css/themes/dark.min.css";
-
-// Require Font Awesome.
-import "font-awesome/css/font-awesome.css";
-
-import FroalaEditor from "react-froala-wysiwyg";
-// import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
-// import FroalaEditorA from 'react-froala-wysiwyg/FroalaEditorA';
-// import FroalaEditorButton from 'react-froala-wysiwyg/FroalaEditorButton';
-// import FroalaEditorImg from 'react-froala-wysiwyg/FroalaEditorImg';
-// import FroalaEditorInput from 'react-froala-wysiwyg/FroalaEditorInput';
+import Editor, {
+  convertToRaw,
+  EditorState,
+} from "../../components/Editor/Editor";
 
 const capitalize = (s) => {
   if (typeof s !== "string") return "";
@@ -38,6 +25,10 @@ export default function CreatePage() {
   const { handleSubmit, errors, control, register } = useForm();
 
   const onSubmit = async (data) => {
+    const { content } = data;
+
+    const rawContent = convertToRaw(content.getCurrentContent());
+
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
     await fetch(`http://localhost:3001/pages`, {
       method: "POST",
@@ -45,7 +36,10 @@ export default function CreatePage() {
         authorization: `Bearer ${idToken}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        ...data,
+        content: rawContent,
+      }),
     });
 
     navigate(`/app/pages`);
@@ -94,12 +88,11 @@ export default function CreatePage() {
                   <Controller
                     name="content"
                     control={control}
+                    defaultValue={EditorState.createEmpty()}
                     render={(props) => (
-                      <FroalaEditor
-                        tag="textarea"
-                        config={{ theme: "dark" }}
-                        model={props.value}
-                        onModelChange={props.onChange}
+                      <Editor
+                        editorState={props.value}
+                        onEditorStateChange={props.onChange}
                       />
                     )}
                   />

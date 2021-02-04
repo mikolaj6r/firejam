@@ -1,11 +1,13 @@
 import * as React from "react";
 import ReactMediaLibraryTabs from "./ReactMediaLibraryTabs";
 
-import { Modal, ModalHeader, ModalBody } from "@windmill/react-ui";
+import { ModalHeader, ModalBody } from "@windmill/react-ui";
+
+import CustomModal from "../../CustomModal/CustomModal";
 
 const ReactMediaLibrary = (props) => {
   return (
-    <Modal
+    <CustomModal
       size="xl"
       isOpen={props.show}
       onClose={props.onHide}
@@ -21,9 +23,11 @@ const ReactMediaLibrary = (props) => {
           fileSelectCallback={props.fileSelectCallback}
           fileDeleteCallback={props.fileDeleteCallback}
           libraryCardComponent={props.libraryCardComponent}
+          additionalTabs={props.additionalTabs}
         />
+        {props.children}
       </ModalBody>
-    </Modal>
+    </CustomModal>
   );
 };
 
