@@ -10,11 +10,7 @@ import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import availableRoles from "../../data/roles";
 import DateTimePicker from "react-datetime-picker";
-
-const capitalize = (s) => {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
+import { API_URL } from "../../hooks/useAPI";
 
 export default function CreateEvent() {
   const navigate = useNavigate();
@@ -22,7 +18,7 @@ export default function CreateEvent() {
 
   const onSubmit = async (data) => {
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    await fetch(`http://localhost:3001/events`, {
+    await fetch(`${API_URL}/events`, {
       method: "POST",
       headers: {
         authorization: `Bearer ${idToken}`,

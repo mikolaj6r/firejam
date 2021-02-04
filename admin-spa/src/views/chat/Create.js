@@ -10,11 +10,7 @@ import { useForm, Controller } from "react-hook-form";
 import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import availableRoles from "../../data/roles";
-
-const capitalize = (s) => {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
+import { capitalize } from "../../utils";
 
 export default function CreateMessage() {
   const navigate = useNavigate();

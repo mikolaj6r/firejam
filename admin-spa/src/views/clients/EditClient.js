@@ -18,12 +18,10 @@ import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import { v4 as uuidv4 } from "uuid";
 import availableRoles from "../../data/roles";
+import { capitalize } from "../../utils";
 
-const capitalize = (s) => {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
-
+import useAPI, { API_URL } from "../../hooks/useAPI";
+// TODO: convert to useAPI
 const fetcher = async (...args) => {
   const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
   const response = await fetch(args[0], {
@@ -45,10 +43,8 @@ const fetcher = async (...args) => {
 export default function EditClient({ uid }) {
   const navigate = useNavigate();
   const { register, handleSubmit, control } = useForm();
-  const { data: client, error } = useSWR(
-    `http://localhost:3001/clients/${uid}`,
-    fetcher
-  );
+
+  const { data: client, error } = useSWR(`${API_URL}/clients/${uid}`, fetcher);
   const [token, setToken] = useState(client?.token);
 
   useEffect(() => {
@@ -62,7 +58,7 @@ export default function EditClient({ uid }) {
 
   const onSubmit = async (data) => {
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    await fetch(`http://localhost:3001/clients/${uid}`, {
+    await fetch(`${API_URL}/clients/${uid}`, {
       method: "PATCH",
       headers: {
         authorization: `Bearer ${idToken}`,
@@ -71,7 +67,7 @@ export default function EditClient({ uid }) {
       body: JSON.stringify(data),
     });
 
-    mutate(`http://localhost:3001/clients/${uid}`);
+    mutate(`${API_URL}/clients/${uid}`);
     navigate(`/app/clients`);
   };
 

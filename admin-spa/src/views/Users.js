@@ -19,7 +19,9 @@ import {
   Pagination,
 } from "@windmill/react-ui";
 import { EditIcon, TrashIcon } from "../icons";
-import useSWR, { mutate } from "swr";
+import { mutate } from "swr";
+import useAPI, { API_URL } from "../hooks/useAPI";
+
 import { useNavigate } from "@reach/router";
 import { PlusCircledIcon } from "@modulz/radix-icons";
 
@@ -31,22 +33,8 @@ function relativeSignInTime(signInTime) {
     : formatDistance(new Date(signInTime), new Date(), { addSuffix: true });
 }
 
-const fetcher = async (...args) => {
-  const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-  const response = await fetch(args[0], {
-    headers: {
-      authorization: `Bearer ${idToken}`,
-    },
-  });
-  const data = await response.json();
-  if (data.status === "success") {
-    const users = data.json;
-    return users;
-  }
-};
-
 export default function Users() {
-  const { data, error } = useSWR("http://localhost:3001/users", fetcher);
+  const { data, error } = useAPI("users");
 
   // setup pages control for every table
   const [pageTable, setPageTable] = useState(1);
@@ -72,14 +60,14 @@ export default function Users() {
   async function onDeleteButtonClick(uid) {
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
 
-    await fetch(`http://localhost:3001/users/${uid}`, {
+    await fetch(`${API_URL}/users/${uid}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${idToken}`,
       },
     });
 
-    mutate("http://localhost:3001/users");
+    mutate(`${API_URL}/users`);
   }
 
   // on page change, load new sliced data

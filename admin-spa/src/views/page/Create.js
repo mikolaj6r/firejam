@@ -9,16 +9,12 @@ import { useForm, Controller } from "react-hook-form";
 import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import availableRoles from "../../data/roles";
+import { API_URL } from "../../hooks/useAPI";
 
 import Editor, {
   convertToRaw,
   EditorState,
 } from "../../components/Editor/Editor";
-
-const capitalize = (s) => {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
 
 export default function CreatePage() {
   const navigate = useNavigate();
@@ -30,7 +26,7 @@ export default function CreatePage() {
     const rawContent = convertToRaw(content.getCurrentContent());
 
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    await fetch(`http://localhost:3001/pages`, {
+    await fetch(`${API_URL}/pages`, {
       method: "POST",
       headers: {
         authorization: `Bearer ${idToken}`,

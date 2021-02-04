@@ -5,30 +5,8 @@ import { FormattedMessage } from "react-intl";
 import { auth, firestore } from "../../firebase";
 import { useUser } from "../../context/UserContext";
 
-import {
-  Input,
-  Button,
-  Label,
-  Select,
-  Textarea,
-  Table,
-  TableHeader,
-  TableCell,
-  TableBody,
-  TableRow,
-  TableFooter,
-  TableContainer,
-  Badge,
-  Pagination,
-} from "@windmill/react-ui";
-import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
-import availableRoles from "../../data/roles";
-
-const capitalize = (s) => {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
+import { capitalize } from "../../utils";
 
 export default function ViewMessage({ uid }) {
   const navigate = useNavigate();

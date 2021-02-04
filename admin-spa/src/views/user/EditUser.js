@@ -3,37 +3,15 @@ import PageTitle from "../../components/Typography/PageTitle";
 import { FormattedMessage } from "react-intl";
 
 import { auth } from "../../firebase";
-import useSWR, { mutate } from "swr";
+import { mutate } from "swr";
+import useAPI, { API_URL } from "../../hooks/useAPI";
 
 import { Input, Button, Label, Select } from "@windmill/react-ui";
 import { useForm, Controller } from "react-hook-form";
 import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import availableRoles from "../../data/roles";
-
-const capitalize = (s) => {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
-
-const fetcher = async (...args) => {
-  const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-  const idTokenResult = await auth.currentUser.getIdTokenResult();
-
-  const response = await fetch(args[0], {
-    headers: {
-      authorization: `Bearer ${idToken}`,
-    },
-  });
-  const data = await response.json();
-  if (data.status === "success") {
-    const user = data.json;
-
-    return {
-      ...user,
-    };
-  }
-};
+import { capitalize } from "../../utils";
 
 export default function EditUser({ uid }) {
   const navigate = useNavigate();
@@ -41,7 +19,7 @@ export default function EditUser({ uid }) {
   const { handleSubmit, errors, control, register } = useForm();
   const onSubmit = async (data) => {
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    await fetch(`http://localhost:3001/users/${uid}`, {
+    await fetch(`${API_URL}/users/${uid}`, {
       method: "PATCH",
       headers: {
         authorization: `Bearer ${idToken}`,
@@ -50,14 +28,11 @@ export default function EditUser({ uid }) {
       body: JSON.stringify(data),
     });
 
-    mutate(`http://localhost:3001/users/${uid}`);
+    mutate(`${API_URL}/users/${uid}`);
     navigate(`/app/users`);
   };
 
-  const { data: user, error } = useSWR(
-    `http://localhost:3001/users/${uid}`,
-    fetcher
-  );
+  const { data: user, error } = useAPI(`users/${uid}`);
 
   if (error) return <div>failed to load: {error}</div>;
   if (!user) return <div>loading...</div>;

@@ -3,7 +3,9 @@ import PageTitle from "../../components/Typography/PageTitle";
 import { FormattedMessage } from "react-intl";
 
 import { auth } from "../../firebase";
-import useSWR, { mutate } from "swr";
+import { mutate } from "swr";
+
+import useAPI, { API_URL } from "../../hooks/useAPI";
 
 import { Input, Button, Label, Select } from "@windmill/react-ui";
 import { useForm, Controller } from "react-hook-form";
@@ -12,37 +14,13 @@ import { useNavigate } from "@reach/router";
 import availableRoles from "../../data/roles";
 import DateTimePicker from "react-datetime-picker";
 
-const capitalize = (s) => {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
-
-const fetcher = async (...args) => {
-  const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-  const idTokenResult = await auth.currentUser.getIdTokenResult();
-
-  const response = await fetch(args[0], {
-    headers: {
-      authorization: `Bearer ${idToken}`,
-    },
-  });
-  const data = await response.json();
-  if (data.status === "success") {
-    const event = data.json;
-
-    return {
-      ...event,
-    };
-  }
-};
-
 export default function EditEvent({ uid }) {
   const navigate = useNavigate();
 
   const { handleSubmit, errors, control, register } = useForm();
   const onSubmit = async (data) => {
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    await fetch(`http://localhost:3001/events/${uid}`, {
+    await fetch(`${API_URL}/events/${uid}`, {
       method: "PATCH",
       headers: {
         authorization: `Bearer ${idToken}`,
@@ -51,14 +29,11 @@ export default function EditEvent({ uid }) {
       body: JSON.stringify(data),
     });
 
-    mutate(`http://localhost:3001/events/${uid}`);
+    mutate(`${API_URL}/events/${uid}`);
     navigate(`/app/events`);
   };
 
-  const { data, error } = useSWR(
-    `http://localhost:3001/events/${uid}`,
-    fetcher
-  );
+  const { data, error } = useAPI(`events/${uid}`);
 
   if (error) return <div>failed to load: {error}</div>;
   if (!data) return <div>loading...</div>;

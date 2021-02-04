@@ -18,27 +18,14 @@ import {
   Pagination,
 } from "@windmill/react-ui";
 import { EditIcon, TrashIcon } from "../icons";
-import useSWR, { mutate } from "swr";
+import { mutate } from "swr";
+import useAPI, { API_URL } from "../hooks/useAPI";
+
 import { useNavigate } from "@reach/router";
 import { PlusCircledIcon } from "@modulz/radix-icons";
 
-const fetcher = async (...args) => {
-  const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-  const response = await fetch(args[0], {
-    headers: {
-      authorization: `Bearer ${idToken}`,
-    },
-  });
-  const data = await response.json();
-  if (data.status === "success") {
-    const clients = data.json;
-
-    return clients;
-  }
-};
-
 export default function Posts() {
-  const { data, error } = useSWR("http://localhost:3001/posts", fetcher);
+  const { data, error } = useAPI("posts");
 
   // setup pages control for every table
   const [pageTable, setPageTable] = useState(1);
@@ -64,14 +51,14 @@ export default function Posts() {
   async function onDeleteButtonClick(uid) {
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
 
-    await fetch(`http://localhost:3001/posts/${uid}`, {
+    await fetch(`${API_URL}/posts/${uid}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${idToken}`,
       },
     });
 
-    mutate("http://localhost:3001/posts");
+    mutate(`${API_URL}/posts`);
   }
 
   // on page change, load new sliced data

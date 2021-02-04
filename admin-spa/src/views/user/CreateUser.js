@@ -3,17 +3,14 @@ import PageTitle from "../../components/Typography/PageTitle";
 import { FormattedMessage } from "react-intl";
 
 import { auth } from "../../firebase";
+import { API_URL } from "../../hooks/useAPI";
 
 import { Input, Button, Label, Select } from "@windmill/react-ui";
 import { useForm, Controller } from "react-hook-form";
 import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import availableRoles from "../../data/roles";
-
-const capitalize = (s) => {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
+import { capitalize } from "../../utils";
 
 export default function CreateUser() {
   const navigate = useNavigate();
@@ -21,7 +18,7 @@ export default function CreateUser() {
 
   const onSubmit = async (data) => {
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    await fetch(`http://localhost:3001/users`, {
+    await fetch(`${API_URL}/users`, {
       method: "POST",
       headers: {
         authorization: `Bearer ${idToken}`,

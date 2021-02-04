@@ -6,7 +6,11 @@
   "workspaces": ["admin-spa", "server"],
   "type": "module",
   "scripts": {
-    "dev": "yarn workspaces run dev"
+    "dev": "yarn workspaces run dev",
+    "build-admin": "cd admin-spa && yarn run build",
+    "deploy-admin": "firebase deploy --only hosting",
+    "build-functions": "cd server && yarn run build",
+    "deploy-functions": "firebase deploy --only functions"
   },
   "keywords": [],
   "author": "",

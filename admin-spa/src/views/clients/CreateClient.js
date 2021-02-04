@@ -10,11 +10,8 @@ import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
 import { v4 as uuidv4 } from "uuid";
 import availableRoles from "../../data/roles";
-
-const capitalize = (s) => {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
+import { capitalize } from "../../utils";
+import { API_URL } from "../../hooks/useAPI";
 
 export default function CreateClient() {
   const navigate = useNavigate();
@@ -29,7 +26,7 @@ export default function CreateClient() {
 
   const onSubmit = async (data) => {
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    await fetch(`http://localhost:3001/clients`, {
+    await fetch(`${API_URL}/clients`, {
       method: "POST",
       headers: {
         authorization: `Bearer ${idToken}`,

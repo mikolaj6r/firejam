@@ -3,22 +3,17 @@ import PageTitle from "../../components/Typography/PageTitle";
 import { FormattedMessage } from "react-intl";
 
 import { auth } from "../../firebase";
+import { API_URL } from "../../hooks/useAPI";
 
 import { Input, Button, Label, Select } from "@windmill/react-ui";
 import { useForm, Controller } from "react-hook-form";
 import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
-import availableRoles from "../../data/roles";
 
 import Editor, {
   convertToRaw,
   EditorState,
 } from "../../components/Editor/Editor";
-
-const capitalize = (s) => {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
 
 export default function CreatePost() {
   const navigate = useNavigate();
@@ -30,7 +25,7 @@ export default function CreatePost() {
     const rawContent = convertToRaw(content.getCurrentContent());
 
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    await fetch(`http://localhost:3001/posts`, {
+    await fetch(`${API_URL}/posts`, {
       method: "POST",
       headers: {
         authorization: `Bearer ${idToken}`,
