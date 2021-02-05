@@ -37,14 +37,21 @@ export async function isAuthenticated(
     } catch (err) {
       console.error(err);
       ctx.status = 401;
+      ctx.body = {
+        status: "error",
+        json: { message: "Bad authorization" },
+      };
     }
   } else {
     ctx.state.requester = undefined;
     //await next();
+    console.error("Authorization header is not found");
 
-    //console.log('Authorization header is not found');
     ctx.status = 401;
-    ctx.body = { message: "Unauthorized" };
+    ctx.body = {
+      status: "error",
+      json: { message: "Authorization header is not found" },
+    };
   }
 }
 
@@ -65,14 +72,22 @@ export function isAuthorized(opts: {
 
     if (!data.role) {
       ctx.status = 403;
-      ctx.body = "";
+      ctx.body = {
+        status: "error",
+        json: { message: "Unauthorized - Missing role" },
+      };
       return;
     }
 
     if (opts.hasRole.includes(data.role)) return next();
 
     ctx.status = 403;
-    ctx.body = "";
+    ctx.body = {
+      status: "error",
+      json: {
+        message: "Unauthorized - User does not have required permissions",
+      },
+    };
     return;
   };
 }

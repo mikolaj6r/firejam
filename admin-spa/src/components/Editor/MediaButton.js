@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 import Option from "../Option/Option";
-import Spinner from "../Spinner/Spinner";
+import Spinner from "../Spinner";
 import "./mediabutton.css";
 
 import { ReactMediaLibrary } from "../MediaLibrary";

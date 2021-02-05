@@ -19,6 +19,9 @@ import {
   Button,
   Pagination,
 } from "@windmill/react-ui";
+import Loader from "../components/Loader";
+import Error from "../components/Error";
+
 import { ChatIcon } from "../icons";
 import { useNavigate } from "@reach/router";
 
@@ -108,6 +111,7 @@ export default function Messages() {
     });
   }, []);
 
+  if (!data) return <Loader />;
   return (
     <>
       <PageTitle>

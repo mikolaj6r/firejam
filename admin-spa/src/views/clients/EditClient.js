@@ -13,6 +13,9 @@ import {
   Button,
   Select,
 } from "@windmill/react-ui";
+import Loader from "../../components/Loader";
+import Error from "../../components/Error";
+
 import { useForm, Controller } from "react-hook-form";
 import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
@@ -71,9 +74,8 @@ export default function EditClient({ uid }) {
     navigate(`/app/clients`);
   };
 
-  console.log(client);
-  if (error) return <div>failed to load</div>;
-  if (!client) return <div>loading...</div>;
+  if (error) return <Error error={error} />;
+  if (!client) return <Loader />;
 
   return (
     <>

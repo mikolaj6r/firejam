@@ -17,6 +17,9 @@ import {
   Button,
   Pagination,
 } from "@windmill/react-ui";
+import Loader from "../components/Loader";
+import Error from "../components/Error";
+
 import { EditIcon, TrashIcon } from "../icons";
 import { mutate } from "swr";
 import useAPI, { API_URL } from "../hooks/useAPI";
@@ -67,11 +70,9 @@ export default function Posts() {
     /* setDataTable(response.slice((pageTable - 1) * resultsPerPage, pageTable1 * resultsPerPage)) */
   }, [pageTable]);
 
-  if (!data) console.log("render with no data");
-  if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
+  if (error) return <Error error={error} />;
+  if (!data) return <Loader />;
 
-  console.log(data);
   return (
     <>
       <PageTitle>
@@ -81,7 +82,6 @@ export default function Posts() {
           description="PageTitle"
         />
       </PageTitle>
-
       <div className="container flex items-center justify-between mx-auto my-6 text-purple-600 dark:text-purple-300">
         <SectionTitle>Table</SectionTitle>
         <div className="flex-1"></div>

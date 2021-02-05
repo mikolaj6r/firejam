@@ -12,7 +12,15 @@ const fetcher = async (...args) => {
       authorization: `Bearer ${idToken}`,
     },
   });
+
   const data = await response.json();
+
+  if (!response.ok || data.status === "error") {
+    const error = new Error("An error occurred while fetching the data.");
+    error.info = data.json;
+    error.status = response.status;
+    throw error;
+  }
   if (data.status === "success") {
     return data.json;
   }

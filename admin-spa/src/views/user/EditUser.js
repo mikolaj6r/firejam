@@ -7,6 +7,9 @@ import { mutate } from "swr";
 import useAPI, { API_URL } from "../../hooks/useAPI";
 
 import { Input, Button, Label, Select } from "@windmill/react-ui";
+import Loader from "../../components/Loader";
+import Error from "../../components/Error";
+
 import { useForm, Controller } from "react-hook-form";
 import { FormsIcon } from "../../icons";
 import { useNavigate } from "@reach/router";
@@ -34,8 +37,8 @@ export default function EditUser({ uid }) {
 
   const { data: user, error } = useAPI(`users/${uid}`);
 
-  if (error) return <div>failed to load: {error}</div>;
-  if (!user) return <div>loading...</div>;
+  if (error) return <Error error={error} />;
+  if (!user) return <Loader />;
 
   return (
     <>

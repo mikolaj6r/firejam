@@ -8,6 +8,9 @@ import { useUser } from "../../context/UserContext";
 import { useNavigate } from "@reach/router";
 import { capitalize } from "../../utils";
 
+import Loader from "../../components/Loader";
+import Error from "../../components/Error";
+
 export default function ViewMessage({ uid }) {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
@@ -80,7 +83,7 @@ export default function ViewMessage({ uid }) {
     });
   }, []);
 
-  if (!data) return <div>loading...</div>;
+  if (!data) return <Loader />;
 
   return (
     <>
