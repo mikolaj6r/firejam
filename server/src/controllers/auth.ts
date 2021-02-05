@@ -74,7 +74,7 @@ export function isAuthorized(opts: {
       ctx.status = 403;
       ctx.body = {
         status: "error",
-        json: { message: "Unauthorized - Missing role" },
+        json: { message: "Forbidden - Missing role" },
       };
       return;
     }
@@ -85,7 +85,7 @@ export function isAuthorized(opts: {
     ctx.body = {
       status: "error",
       json: {
-        message: "Unauthorized - User does not have required permissions",
+        message: "Forbidden - User does not have required permissions",
       },
     };
     return;
