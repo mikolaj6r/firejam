@@ -11,7 +11,7 @@ import Messages from "../views/Messages";
 import Posts from "../views/Posts";
 import Pages from "../views/Pages";
 import Events from "../views/Events";
-import LoggedLayout from "../containers/LoggedLayout";
+import LoggedLayout from "./LoggedLayout";
 import Clients from "../views/Clients";
 import EditClient from "../views/clients/EditClient";
 import CreateClient from "../views/clients/CreateClient";
