@@ -14,8 +14,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "12"
-      - run: yarn install
-      - run: yarn run build-admin
+      - run: cd admin-spa && yarn install
+      - run: cd admin-spa && yarn run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
@@ -31,8 +31,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "8"
-      - run: yarn install
-      - run: yarn run build-functions
+      - run: cd server && yarn install
+      - run: cd server && yarn run build
       - name: Deploy to Firebase Functions
         uses: w9jds/firebase-action@v2.0.0
         with:
