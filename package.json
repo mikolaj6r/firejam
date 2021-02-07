@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "workspaces": ["admin-spa", "server"],
-  "type": "module",
   "scripts": {
-    "dev": "yarn workspaces run dev",
     "build-admin": "cd admin-spa && yarn run build",
     "deploy-admin": "firebase deploy --only hosting",
     "build-functions": "cd server && yarn run build",
