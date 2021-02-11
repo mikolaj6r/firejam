@@ -59,7 +59,7 @@ export default function CreateEvent() {
                       name="title"
                       defaultValue=""
                       type="text"
-                      ref={register}
+                      ref={register({ required: true })}
                     />
                     {errors.title && <span>This field is required</span>}
                   </Label>
@@ -75,7 +75,7 @@ export default function CreateEvent() {
                       name="description"
                       defaultValue=""
                       type="text"
-                      ref={register}
+                      ref={register({ required: true })}
                     />
                     {errors.description && <span>This field is required</span>}
                   </Label>

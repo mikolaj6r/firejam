@@ -1,6 +1,1 @@
-export default [
-  'admin',
-  'teacher',
-  'client',
-  'public'
-]
+export default ["admin", "management", "teacher", "client", "public"];

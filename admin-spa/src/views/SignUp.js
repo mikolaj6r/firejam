@@ -1,52 +1,32 @@
 import React, { useState } from "react";
 import { Link } from "@reach/router";
-import { auth, generateUserDocument } from "../firebase";
+
+import { API_URL } from "../hooks/useAPI";
+
+import { useForm } from "react-hook-form";
 
 const SignUp = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [displayName, setDisplayName] = useState("");
+  const { handleSubmit, errors, control, register } = useForm();
 
   const [error, setError] = useState(null);
 
-  const createUserWithEmailAndPasswordHandler = async (
-    event,
-    email,
-    password
-  ) => {
-    event.preventDefault();
+  const onSubmit = async (data) => {
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
-      generateUserDocument(user, { displayName });
+      const user = await fetch(`${API_URL}/users`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      console.log(user);
     } catch (error) {
       setError("Error Signing up with email and password");
-    }
-
-    setEmail("");
-    setPassword("");
-    setDisplayName("");
-  };
-  const onChangeHandler = (event) => {
-    const { name, value } = event.currentTarget;
-    if (name === "email") {
-      setEmail(value);
-    } else if (name === "password") {
-      setPassword(value);
-    } else if (name === "displayName") {
-      setDisplayName(value);
     }
   };
   return (
     <>
-      <script
-        src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
-        defer
-      ></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-
       <style>
         @import
         url('https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css')
@@ -264,116 +244,127 @@ const SignUp = () => {
               </svg>
             </div>
             <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
-              {error !== null && (
-                <div className="py-4 bg-red-600 w-full text-white text-center mb-3">
-                  {error}
+              <form onSubmit={handleSubmit(onSubmit)}>
+                {error !== null && (
+                  <div className="py-4 bg-red-600 w-full text-white text-center mb-3">
+                    {error}
+                  </div>
+                )}
+                <div className="text-center mb-10">
+                  <h1 className="font-bold text-3xl text-gray-900">REGISTER</h1>
+                  <p>Enter your information to register</p>
                 </div>
-              )}
-              <div className="text-center mb-10">
-                <h1 className="font-bold text-3xl text-gray-900">REGISTER</h1>
-                <p>Enter your information to register</p>
-              </div>
-              <div>
-                <div className="flex -mx-3">
-                  <div className="w-1/2 px-3 mb-5">
-                    <label
-                      htmlFor="displayName"
-                      className="text-xs font-semibold px-1"
-                    >
-                      Display name
-                    </label>
-                    <div className="flex">
-                      <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
-                        <i className="mdi mdi-account-outline text-gray-400 text-lg"></i>
+                <div>
+                  <div className="flex -mx-3">
+                    <div className="w-1/2 px-3 mb-5">
+                      <label
+                        htmlFor="displayName"
+                        className="text-xs font-semibold px-1"
+                      >
+                        Display name
+                      </label>
+                      <div className="flex">
+                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                          <i className="mdi mdi-account-outline text-gray-400 text-lg"></i>
+                        </div>
+                        <input
+                          type="text"
+                          name="displayName"
+                          className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                          placeholder="John Smith"
+                          ref={register({ required: true })}
+                        />
                       </div>
-                      <input
-                        type="text"
-                        name="displayName"
-                        className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                        placeholder="John Smith"
-                        value={displayName}
-                        onChange={(event) => onChangeHandler(event)}
-                      />
+                      {errors.displayName && (
+                        <span>This field is required</span>
+                      )}
                     </div>
                   </div>
-                </div>
-                <div className="flex -mx-3">
-                  <div className="w-full px-3 mb-5">
-                    <label
-                      htmlFor="email"
-                      className="text-xs font-semibold px-1"
-                    >
-                      Email
-                    </label>
-                    <div className="flex">
-                      <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
-                        <i className="mdi mdi-email-outline text-gray-400 text-lg"></i>
+                  <div className="flex -mx-3">
+                    <div className="w-full px-3 mb-5">
+                      <label
+                        htmlFor="email"
+                        className="text-xs font-semibold px-1"
+                      >
+                        Email
+                      </label>
+                      <div className="flex">
+                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                          <i className="mdi mdi-email-outline text-gray-400 text-lg"></i>
+                        </div>
+                        <input
+                          type="email"
+                          name="email"
+                          ref={register({
+                            required: "Required",
+                            pattern: {
+                              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                              message: "invalid email address",
+                            },
+                          })}
+                          className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                          placeholder="johnsmith@example.com"
+                        />
                       </div>
-                      <input
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={(event) => onChangeHandler(event)}
-                        className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                        placeholder="johnsmith@example.com"
-                      />
+                      {errors.email && <span>This field is required</span>}
                     </div>
                   </div>
-                </div>
-                <div className="flex -mx-3">
-                  <div className="w-full px-3 mb-12">
-                    <label
-                      htmlFor="password"
-                      className="text-xs font-semibold px-1"
-                    >
-                      Password
-                    </label>
-                    <div className="flex">
-                      <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
-                        <i className="mdi mdi-lock-outline text-gray-400 text-lg"></i>
+                  <div className="flex -mx-3">
+                    <div className="w-full px-3 mb-12">
+                      <label
+                        htmlFor="password"
+                        className="text-xs font-semibold px-1"
+                      >
+                        Password
+                      </label>
+                      <div className="flex">
+                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                          <i className="mdi mdi-lock-outline text-gray-400 text-lg"></i>
+                        </div>
+                        <input
+                          type="password"
+                          name="password"
+                          className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                          placeholder="************"
+                          autoComplete="new-password"
+                          ref={register({
+                            required: "Required",
+                            pattern: {
+                              value: /(?=.*[0-9a-zA-Z]).{6,}/i,
+                              message:
+                                "The password must be a string with at least  6 chars length",
+                            },
+                          })}
+                        />
                       </div>
-                      <input
-                        type="password"
-                        name="password"
-                        className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                        placeholder="************"
-                        value={password}
-                        autoComplete="new-password"
-                        onChange={(event) => onChangeHandler(event)}
-                      />
+                      {errors.password && errors.password.message}
                     </div>
                   </div>
-                </div>
-                <div className="flex -mx-3">
-                  <div className="w-full px-3 mb-5">
-                    <button
-                      className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
-                      onClick={(event) => {
-                        createUserWithEmailAndPasswordHandler(
-                          event,
-                          email,
-                          password
-                        );
-                      }}
-                    >
-                      REGISTER NOW
-                    </button>
+                  <div className="flex -mx-3">
+                    <div className="w-full px-3 mb-5">
+                      <button
+                        type="submit"
+                        className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
+                      >
+                        REGISTER NOW
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex mx-3 text-center">
+                    <p className="w-full  text-center my-1">or</p>
+                  </div>
+                  <div className="flex mx-3 text-center">
+                    <p className="w-full text-center my-3">
+                      <Link
+                        to="/"
+                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                      >
+                        Sign in here
+                      </Link>
+                    </p>
                   </div>
                 </div>
-                <div className="flex mx-3 text-center">
-                  <p className="w-full  text-center my-1">or</p>
-                </div>
-                <div className="flex mx-3 text-center">
-                  <p className="w-full text-center my-3">
-                    <Link
-                      to="/"
-                      className="font-medium text-indigo-600 hover:text-indigo-500"
-                    >
-                      Sign in here
-                    </Link>
-                  </p>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

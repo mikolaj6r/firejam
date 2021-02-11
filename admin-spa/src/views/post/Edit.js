@@ -31,7 +31,7 @@ export default function EditPost({ uid }) {
     const rawContent = convertToRaw(content.getCurrentContent());
 
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
-    await fetch(`${API_URL}/${uid}`, {
+    await fetch(`${API_URL}/posts/${uid}`, {
       method: "PATCH",
       headers: {
         authorization: `Bearer ${idToken}`,
@@ -92,7 +92,7 @@ export default function EditPost({ uid }) {
                       name="title"
                       defaultValue={post.title}
                       type="text"
-                      ref={register}
+                      ref={register({ required: true })}
                     />
                     {errors.title && <span>This field is required</span>}
                   </Label>

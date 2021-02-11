@@ -48,11 +48,7 @@ export default function EditClient({ uid }) {
   const { register, handleSubmit, control } = useForm();
 
   const { data: client, error } = useSWR(`${API_URL}/clients/${uid}`, fetcher);
-  const [token, setToken] = useState(client?.token);
-
-  useEffect(() => {
-    setToken(client?.token);
-  }, [client]);
+  const [token, setToken] = useState("");
 
   function onGenerateClick(event) {
     event.preventDefault();
@@ -60,6 +56,10 @@ export default function EditClient({ uid }) {
   }
 
   const onSubmit = async (data) => {
+    Object.keys(data).forEach(
+      (key) => typeof data[key] != "boolean" && !data[key] && delete data[key]
+    );
+
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true);
     await fetch(`${API_URL}/clients/${uid}`, {
       method: "PATCH",
@@ -108,7 +108,7 @@ export default function EditClient({ uid }) {
               </div>
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 items-center">
                 <dt className="text-sm leading-5 font-medium text-gray-500">
-                  Token
+                  Token (Tokens stored in DB are not shown here)
                 </dt>
                 <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                   <div className="relative">

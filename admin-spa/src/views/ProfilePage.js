@@ -9,7 +9,7 @@ import { Badge, Avatar, Button } from "@windmill/react-ui";
 
 const ProfilePage = () => {
   const user = useContext(UserContext);
-  const { photoURL, displayName, email } = user;
+  const { displayName, email } = user;
 
   return (
     <>
@@ -26,7 +26,6 @@ const ProfilePage = () => {
             <div className="flex justify-center">
               <img
                 src={
-                  photoURL ||
                   "https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png"
                 }
                 alt="profile picture"

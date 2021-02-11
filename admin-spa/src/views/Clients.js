@@ -96,7 +96,6 @@ export default function Clients() {
             <tr>
               <TableCell>Id</TableCell>
               <TableCell>Status</TableCell>
-              <TableCell>Token</TableCell>
               <TableCell>Role</TableCell>
               <TableCell>Actions</TableCell>
             </tr>
@@ -115,9 +114,6 @@ export default function Clients() {
                   <Badge type={data.disabled ? "danger" : "success"}>
                     {data.disabled ? "disabled" : "enabled"}
                   </Badge>
-                </TableCell>
-                <TableCell>
-                  <p className="font-semibold">{data.token}</p>
                 </TableCell>
                 <TableCell>
                   <span className="text-sm">{data.role}</span>

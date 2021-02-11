@@ -178,7 +178,7 @@ export default function CreateMessage() {
                       name="message"
                       defaultValue=""
                       rows="3"
-                      ref={register}
+                      ref={register({ required: true })}
                     />
                     {errors.message && <span>This field is required</span>}
                   </Label>

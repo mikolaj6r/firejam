@@ -59,7 +59,7 @@ export default function CreateUser() {
                       name="displayName"
                       defaultValue={""}
                       type="text"
-                      ref={register}
+                      ref={register({ required: true })}
                     />
                     {errors.displayName && <span>This field is required</span>}
                   </Label>
@@ -75,7 +75,13 @@ export default function CreateUser() {
                       name="email"
                       defaultValue=""
                       type="email"
-                      ref={register}
+                      ref={register({
+                        required: "Required",
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: "invalid email address",
+                        },
+                      })}
                     />
                     {errors.email && <span>This field is required</span>}
                   </Label>
@@ -91,9 +97,16 @@ export default function CreateUser() {
                       name="password"
                       defaultValue=""
                       type="password"
-                      ref={register}
+                      ref={register({
+                        required: "Required",
+                        pattern: {
+                          value: /(?=.*[0-9a-zA-Z]).{6,}/i,
+                          message:
+                            "The password must be a string with at least  6 chars length",
+                        },
+                      })}
                     />
-                    {errors.password && <span>This field is required</span>}
+                    {errors.password && errors.password.message}
                   </Label>
                 </dd>
               </div>

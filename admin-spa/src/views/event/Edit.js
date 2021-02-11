@@ -72,7 +72,7 @@ export default function EditEvent({ uid }) {
                       name="title"
                       defaultValue={event.title}
                       type="text"
-                      ref={register}
+                      ref={register({ required: true })}
                     />
                     {errors.title && <span>This field is required</span>}
                   </Label>
@@ -88,7 +88,7 @@ export default function EditEvent({ uid }) {
                       name="description"
                       defaultValue={event.description}
                       type="text"
-                      ref={register}
+                      ref={register({ required: true })}
                     />
                     {errors.description && <span>This field is required</span>}
                   </Label>

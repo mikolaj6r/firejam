@@ -69,7 +69,7 @@ export default function EditUser({ uid }) {
                       name="displayName"
                       defaultValue={user.displayName}
                       type="text"
-                      ref={register}
+                      ref={register({ required: true })}
                     />
                     {errors.displayName && <span>This field is required</span>}
                   </Label>
@@ -85,7 +85,13 @@ export default function EditUser({ uid }) {
                       name="email"
                       defaultValue={user.email}
                       type="email"
-                      ref={register}
+                      ref={register({
+                        required: "Required",
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: "invalid email address",
+                        },
+                      })}
                     />
                     {errors.email && <span>This field is required</span>}
                   </Label>

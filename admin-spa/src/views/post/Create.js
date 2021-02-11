@@ -69,7 +69,7 @@ export default function CreatePost() {
                       name="title"
                       defaultValue=""
                       type="text"
-                      ref={register}
+                      ref={register({ required: true })}
                     />
                     {errors.title && <span>This field is required</span>}
                   </Label>

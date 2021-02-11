@@ -50,8 +50,7 @@ app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
 
 app.use(
   cors({
-    //origin: functions.config().adminpanel.url,
-    origin: "http://localhost:3000",
+    origin: functions.config().adminpanel.url,
   })
 );
 app.use(bodyParser());

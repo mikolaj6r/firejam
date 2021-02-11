@@ -92,7 +92,7 @@ export default function EditPage({ uid }) {
                       name="title"
                       defaultValue={page.title}
                       type="text"
-                      ref={register}
+                      ref={register({ required: true })}
                     />
                     {errors.title && <span>This field is required</span>}
                   </Label>
