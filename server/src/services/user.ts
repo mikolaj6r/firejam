@@ -1,4 +1,5 @@
 import * as admin from "firebase-admin";
+import { CreatedUser } from "../schemas/user";
 
 function mapUser(user: admin.auth.UserRecord) {
   const customClaims = (user.customClaims || { role: "teacher" }) as {
@@ -28,6 +29,9 @@ export default {
   },
   async findOne(uid: string) {
     const user = await admin.auth().getUser(uid);
+
+    if (!user) return null;
+
     return mapUser(user);
   },
   async update(uid: string, { role, ...userData }: { role: string }) {
@@ -37,8 +41,16 @@ export default {
 
     return mapUser(user);
   },
-  async create({ role = "teacher", ...userData }) {
-    const user = await admin.auth().createUser(userData);
+  async create({ role = "public", ...userData }: CreatedUser) {
+    const userDataWithDefaults = {
+      disabled: true,
+      emailVerified: true,
+      ...userData,
+    };
+
+    console.log(userData);
+    console.log(userDataWithDefaults);
+    const user = await admin.auth().createUser(userDataWithDefaults);
 
     await admin.auth().setCustomUserClaims(user.uid, { role });
 

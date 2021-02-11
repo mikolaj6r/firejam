@@ -25,12 +25,7 @@ import postsRouter from "./routes/post";
 const PORT = Number(process.env.PORT) || 3001;
 
 const app = new Koa();
-app.use(cors());
-app.use(bodyParser());
 
-app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
-  await next();
-});
 // Middleware
 // Error handling
 app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
@@ -42,11 +37,24 @@ app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
       error.statusCode ||
       error.status ||
       HttpStatus.StatusCodes.INTERNAL_SERVER_ERROR;
+
     error.status = ctx.status;
-    ctx.body = { error };
+    ctx.body = {
+      status: "error",
+      json: error,
+    };
+
     ctx.app.emit("error", error, ctx);
   }
 });
+
+app.use(
+  cors({
+    //origin: functions.config().adminpanel.url,
+    origin: "http://localhost:3000",
+  })
+);
+app.use(bodyParser());
 
 //routing
 const router = new Router();

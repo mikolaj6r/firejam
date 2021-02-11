@@ -1,32 +1,51 @@
-import * as admin from 'firebase-admin';
+import * as admin from "firebase-admin";
 
-const DB_COLLECTION_KEY = 'clients';
+import * as cryptoServices from "./crypto";
+
+const DB_COLLECTION_KEY = "clients";
 const db = admin.firestore();
-
-interface IClient {
-  token: string;
-  role: string
-}
 
 export default {
   async createJWTToken(token: string) {
-    const snapshot = await db.collection(DB_COLLECTION_KEY).where('token', '==', token).limit(1).get();
-
-    if (snapshot.empty) {
-      console.log('No matching client.');
-      return;
-    }
-
-    const foundClient = snapshot.docs[0].data() as IClient;
-    const role = foundClient.role || 'admin';
+    let foundClient: any = null;
 
     try {
-      const jwtToken = await admin.auth().createCustomToken(token, { role, firejam: true });
+      const snapshot = await db.collection(DB_COLLECTION_KEY).get();
+      let alreadyFound = false;
+
+      snapshot.forEach((doc) => {
+        if (alreadyFound) return;
+
+        const data = doc.data();
+        const tokenObj = data.token;
+        console.log(tokenObj);
+        const isThatClient = cryptoServices.compare(token, tokenObj);
+        console.log(isThatClient);
+        if (isThatClient) {
+          foundClient = {
+            id: doc.id,
+            role: data.role || "client",
+          };
+          alreadyFound = true;
+        }
+      });
+    } catch (error) {
+      console.log("Error getting data from db", error);
+      throw new Error("Error getting data from db");
+    }
+
+    console.log(foundClient);
+    if (!foundClient) return null;
+
+    try {
+      const jwtToken = await admin
+        .auth()
+        .createCustomToken(foundClient.id, { ...foundClient, firejam: true });
+
       return jwtToken;
+    } catch (error) {
+      console.log("Error creating custom token:", error);
+      return "";
     }
-    catch(error){
-      console.log('Error creating custom token:', error);
-      return '';
-    }
-  }
-}
+  },
+};

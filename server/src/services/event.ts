@@ -1,13 +1,13 @@
 import * as admin from "firebase-admin";
-import { EventRecord } from "../types/event";
-import { FirebaseDoc } from "../types/firebase";
+import { Event, UpdatedEvent } from "../schemas/event";
+import { FirebaseDoc } from "../schemas/firebase";
 
 import userServices from "../services/user";
 
 const DB_COLLECTION_KEY = "events";
 const db = admin.firestore();
 
-type Resource = FirebaseDoc<EventRecord>;
+type Resource = FirebaseDoc<Event>;
 
 export default {
   async find(): Promise<Resource[]> {
@@ -18,7 +18,7 @@ export default {
       snapshot.forEach(async (doc) => {
         resources.push({
           id: doc.id,
-          data: doc.data() as EventRecord,
+          data: doc.data() as Event,
         });
       });
 
@@ -51,19 +51,19 @@ export default {
     } else {
       return {
         id: doc.id,
-        data: doc.data() as EventRecord,
+        data: doc.data() as Event,
       };
     }
   },
 
-  async update(uid: string, data: any) {
+  async update(uid: string, data: UpdatedEvent) {
     const ref = db.collection(DB_COLLECTION_KEY).doc(uid);
     const res = await ref.update(data);
 
     return res;
   },
 
-  async create(data: any, userId: string) {
+  async create(data: Event, userId: string) {
     await db.collection(DB_COLLECTION_KEY).add({
       ...data,
       userId,

@@ -101,6 +101,7 @@ export default {
               type: "client",
               data: {
                 role: tokenPayload.claims.role,
+                id: tokenPayload.claims.id,
               },
             });
           }

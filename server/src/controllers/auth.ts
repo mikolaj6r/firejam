@@ -6,16 +6,24 @@ import * as functions from "firebase-functions";
 import authServices from "../services/auth";
 import jwtServices from "../services/jwt";
 
+import { RoleEnum } from "../schemas/role";
+
 export default {
   async getToken(ctx: Koa.Context) {
     const { token } = ctx.request.body;
 
-    const jwt = await authServices.createJWTToken(token);
+    try {
+      const jwt = await authServices.createJWTToken(token);
 
-    return (ctx.body = {
-      status: "success",
-      json: jwt,
-    });
+      if (!jwt) return ctx.throw(400, `Error creating JWT token for client`);
+
+      return (ctx.body = {
+        status: "success",
+        json: jwt,
+      });
+    } catch (error) {
+      return ctx.throw(400, `Error creating JWT token for client`);
+    }
   },
 };
 
@@ -33,61 +41,45 @@ export async function isAuthenticated(
       let decodedToken = await jwtServices.verify(token[1]);
 
       ctx.state.requester = decodedToken;
-      await next();
+      return next();
     } catch (err) {
-      console.error(err);
-      ctx.status = 401;
-      ctx.body = {
-        status: "error",
-        json: { message: "Bad authorization" },
-      };
+      ctx.state.requester = undefined;
+      console.log(err);
+      return ctx.throw(401, `Unauthorized - ${err.toString()}`);
     }
   } else {
     ctx.state.requester = undefined;
-    //await next();
-    console.error("Authorization header is not found");
 
-    ctx.status = 401;
-    ctx.body = {
-      status: "error",
-      json: { message: "Authorization header is not found" },
-    };
+    return ctx.throw(401, "Unauthorized - Missing authorization header");
   }
 }
 
 export function isAuthorized(opts: {
-  hasRole: Array<"admin" | "teacher" | "client" | "public">;
+  hasRole: Array<RoleEnum>;
   allowSameUser?: boolean;
 }) {
   return (ctx: Koa.Context, next: () => Promise<any>) => {
+    console.log(ctx.state.requester);
     const { data, type } = ctx.state.requester;
     const { id } = ctx.params;
 
-    if (type === "user") {
-      const { email, id: userId } = data;
-      if (email === functions.config().rootuser.email) return next();
+    const { id: requesterId } = data;
 
-      if (opts.allowSameUser && id && userId === id) return next();
+    if (opts.allowSameUser && id && requesterId === id) return next();
+
+    if (type === "user") {
+      if (data.email === functions.config().rootuser.email) return next();
     }
 
     if (!data.role) {
-      ctx.status = 403;
-      ctx.body = {
-        status: "error",
-        json: { message: "Forbidden - Missing role" },
-      };
-      return;
+      return ctx.throw(403, "Forbidden - Missing role");
     }
 
     if (opts.hasRole.includes(data.role)) return next();
 
-    ctx.status = 403;
-    ctx.body = {
-      status: "error",
-      json: {
-        message: "Forbidden - User does not have required permissions",
-      },
-    };
-    return;
+    return ctx.throw(
+      403,
+      "Forbidden - User does not have required permissions"
+    );
   };
 }
