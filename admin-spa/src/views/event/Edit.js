@@ -29,6 +29,7 @@ export default function EditEvent({ uid }) {
         authorization: `Bearer ${idToken}`,
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify(data),
     });
 

@@ -37,6 +37,7 @@ export default function EditPage({ uid }) {
         authorization: `Bearer ${idToken}`,
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify({
         ...data,
         content: rawContent,

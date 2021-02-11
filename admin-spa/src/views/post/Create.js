@@ -31,6 +31,7 @@ export default function CreatePost() {
         authorization: `Bearer ${idToken}`,
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify({
         ...data,
         content: rawContent,

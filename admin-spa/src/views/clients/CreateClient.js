@@ -32,6 +32,7 @@ export default function CreateClient() {
         authorization: `Bearer ${idToken}`,
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify(data),
     });
 

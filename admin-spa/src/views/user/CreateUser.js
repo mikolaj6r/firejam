@@ -24,6 +24,7 @@ export default function CreateUser() {
         authorization: `Bearer ${idToken}`,
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify(data),
     });
 

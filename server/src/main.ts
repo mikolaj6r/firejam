@@ -31,6 +31,10 @@ const app = new Koa();
 app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
   try {
     await next();
+    console.log({
+      headers: ctx.response.headers,
+      status: ctx.response.status,
+    });
   } catch (error) {
     console.error(error);
     ctx.status =
@@ -50,7 +54,8 @@ app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
 
 app.use(
   cors({
-    origin: functions.config().adminpanel.url,
+    credentials: true,
+    keepHeadersOnError: true,
   })
 );
 app.use(bodyParser());

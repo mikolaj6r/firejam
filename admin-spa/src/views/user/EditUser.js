@@ -28,6 +28,7 @@ export default function EditUser({ uid }) {
         authorization: `Bearer ${idToken}`,
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify(data),
     });
 
